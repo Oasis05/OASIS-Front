@@ -11,11 +11,11 @@ function Navbar() {
             <div className='text-2xl font-bold uppercase'>Oasis</div>
 
             <div className='flex gap-4'>
-              <Link to='/home' className='hover:underline'>Home</Link>
-              <div className='hover:underline'>Produtos</div>
-              <div className='hover:underline'>Sobre nós</div>
-              <Link to='/login' className='hover:underline'>Login</Link>
-              <div className='hover:underline'>Sair</div>
+              <Link to='/home' className='hover:text-teal-900'>Home</Link>
+              <div className='hover:text-teal-900'>Produtos</div>
+              <Link to='/sobreNos' className='hover:text-teal-900'>Sobre Nós</Link>
+              <Link to='/login' className='hover:text-teal-900'>Login</Link>
+              <div className='hover:text-teal-900'>Sair</div>
             </div>
           </div>
         </div>
