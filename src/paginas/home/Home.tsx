@@ -5,7 +5,7 @@ function Home() {
   const estiloDoFundo = {
     backgroundImage: `url('https://i.imgur.com/bKJDGVK.jpg')`,
     backgroundSize: '100%',
-    height: 325
+    height: 400
   };
 
   return (
