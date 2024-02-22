@@ -1,4 +1,5 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Logo from "../../assets/logo.svg";
 
 function Navbar() {
  
@@ -6,19 +7,19 @@ function Navbar() {
 
   return (
     <>
-     <div className='w-full bg-teal-700 text-white flex justify-center py-4'>
-          <div className="container flex justify-between text-lg">
-            <div className='text-2xl font-bold uppercase'>Oasis</div>
+     <header className='bg-teal-50	 w-full text-green flex justify-between align-middle py-[1rem] px-[4rem] '>
+        <Link to="/home">
+          <img src={Logo} className="xl:w-15 sm:w-14"></img>
+        </Link>
 
-            <div className='flex gap-4'>
-              <Link to='/home' className='hover:text-teal-900'>Home</Link>
-              <div className='hover:text-teal-900'>Produtos</div>
-              <Link to='/sobreNos' className='hover:text-teal-900'>Sobre Nós</Link>
-              <Link to='/login' className='hover:text-teal-900'>Login</Link>
-              <div className='hover:text-teal-900'>Sair</div>
-            </div>
-          </div>
-        </div>
+            <div className="text-darkMossGreen p-4 grid gap-7 grid-flow-col items-center font-bold text-[13.5px] ]">
+              <Link to='/home' className='hover:text-emerald-800 uppercase'>Home</Link>
+              <div className='hover:text-emerald-800 uppercase'>Produtos</div>
+              <Link to='/sobreNos' className='hover:text-emerald-800 uppercase'>Sobre Nós</Link>
+              <Link to='/login' className='hover:text-emerald-800 uppercase'>Login</Link>
+              <div className='hover:text-emerald-800 uppercase'>Sair</div>
+      </div>
+    </header>
     </>
   )
 }
