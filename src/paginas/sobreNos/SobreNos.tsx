@@ -3,7 +3,7 @@ function SobreNos() {
     return (
 
         <div className="container max-w-screen-lg m-auto ">
-            <h1 className="text-3xl font-bold my-6 uppercase text-yellow-950">Sobre Nós</h1>
+            <h1 className="text-xl font-bold my-6 uppercase text-yellow-950">Sobre Nós</h1>
             <p>Bem-vindo ao Oasis, onde cada compra alimenta uma missão dupla: nutrir corpos e almas, e semear um futuro mais sustentável e justo para todos.
                 Nascemos da crença profunda de que a alimentação não é apenas um direito básico, mas o alicerce de uma comunidade saudável.
                 Em um mundo onde o excesso e a escassez convivem lado a lado, Oasis emerge como uma ponte entre o campo e a cidade, entre a abundância e a necessidade,
