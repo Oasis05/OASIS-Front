@@ -3,7 +3,7 @@ import './Home.css';
 
 function Home() {
   const estiloDoFundo = {
-    backgroundImage: `url('https://i.imgur.com/bKJDGVK.jpg')`,
+    backgroundImage: `url('https://i.imgur.com/xvzLDxo.jpg')`,
     backgroundSize: '100%',
     height: 400
   };
