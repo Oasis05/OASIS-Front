@@ -12,72 +12,73 @@ function Login() {
     {} as UsuarioLogin
   );
 
-  const { usuario, handleLogin } = useContext(AuthContext);
-
-  const {isLoading} = useContext(AuthContext) 
+  const { usuario, handleLogin, isLoading } = useContext(AuthContext);
 
   useEffect(() => {
     if (usuario.token !== "") {
-        navigate('/home')
+      navigate('/home');
     }
-}, [usuario])
+  }, [usuario]);
 
-function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
-  setUsuarioLogin({
+  function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+    setUsuarioLogin({
       ...usuarioLogin,
       [e.target.name]: e.target.value
-  })
-}
+    });
+  }
 
-function login(e: ChangeEvent<HTMLFormElement>) {
-  e.preventDefault()
-  handleLogin(usuarioLogin)
-}
+  function login(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault();
+    handleLogin(usuarioLogin);
+  }
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold ">
-        <form className="flex justify-center items-center flex-col w-1/2 gap-4" onSubmit={login}>
-          <h2 className="text-slate-900 text-5xl ">Entrar</h2>
-          <div className="flex flex-col w-full">
-            <label htmlFor="usuario">Usuário</label>
-            <input
-              type="text"
-              id="usuario"
-              name="usuario"
-              placeholder="Usuario"
-              className="border-2 border-slate-700 rounded p-2"
-              value={usuarioLogin.usuario} 
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            />
-          </div>
-          <div className="flex flex-col w-full">
-            <label htmlFor="senha">Senha</label>
-            <input
-              type="password"
-              id="senha"
-              name="senha"
-              placeholder="Senha"
-              className="border-2 border-slate-700 rounded p-2"
-              value={usuarioLogin.senha} 
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            />
-          </div>
-          <button  type='submit' className="rounded bg-indigo-400 hover:bg-indigo-900 text-white w-1/2 py-2 flex justify-center">
-           {isLoading ? <img className='flex justify-center' src={globo} alt="Gif de carregar" width="35px" />:
-            <span>Entrar</span>}
-          </button>
+      <div className="flex h-screen w-full items-center justify-center bg-yellow-950 bg-cover bg-no-repeat" style={{background: "white"}}>
+        <div className="rounded-xl bg-lime-100 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
+          <div className="text-green-900">
+            <div className="mb-8 flex flex-col items-center">
+              <img src="https://i.imgur.com/mX9nNuC.png" width="100" alt="" srcSet="" />
+              <h1 className="mb-2 text-2xl font-bold">Oásis</h1>
+              <span className="text-yellow-950">Enter Login Details</span>
+            </div>
+            <form onSubmit={login}>
+              <div className="mb-4 text-lg">
+                <input
+                  type="text"
+                  name="usuario"
+                  placeholder="id@email.com"
+                  className="rounded-3xl border-none bg-yellow-700 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+                  value={usuarioLogin.usuario} 
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                />
+              </div>
 
-          <hr className="border-slate-800 w-full" />
-
-          <p>
-            Ainda não tem uma conta?{' '}
-            <Link to="/cadastro" className="text-indigo-800 hover:underline">
-              Cadastre-se
-            </Link>
-          </p>
-        </form>
-        <div className="fundoLogin hidden lg:block"></div>
+              <div className="mb-4 text-lg">
+                <input
+                  type="password"
+                  name="senha"
+                  placeholder="*********"
+                  className="rounded-3xl border-none bg-yellow-700 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+                  value={usuarioLogin.senha} 
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                />
+              </div>
+              <div className="mt-8 flex justify-center text-lg text-black">
+                <button type='submit' className="rounded-3xl bg-yellow-700 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600">
+                  {isLoading ? <img className='flex justify-center' src={globo} alt="Gif de carregar" width="35px" /> : <span>Entrar</span>}
+                </button>
+              </div>
+            </form>
+            <hr className=" w-full" />
+            <p className="text-center text-yellow-950">
+              Ainda não tem uma conta?{' '}
+              <Link to="/cadastro" className="text-green-950 hover:text-yellow-600">
+                Cadastre-se
+              </Link>
+            </p>
+          </div>
+        </div>
       </div>
     </>
   );
