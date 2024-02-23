@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { UserContext } from '../../contexts/AuthContext'
+import { UserContext } from '../../contexts/'
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
