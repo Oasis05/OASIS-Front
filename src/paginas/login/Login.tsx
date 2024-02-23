@@ -1,19 +1,12 @@
-<<<<<<< HEAD
 import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
 import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import UsuarioLogin from '../../models/UsuarioLogin';
 import globo from '../../assets/globo.gif';
-=======
-import React, { useContext } from 'react';
-
-import { UserContext } from '../../contexts/'
-import { useNavigate } from 'react-router-dom';
->>>>>>> c27ba61b3982b7a5ef484c20def0d6381c1b6310
 
 function Login() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
     {} as UsuarioLogin
