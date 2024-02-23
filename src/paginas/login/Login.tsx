@@ -39,7 +39,7 @@ function Login() {
           <div className="text-green-900">
             <div className="mb-8 flex flex-col items-center">
               <img src="https://i.imgur.com/mX9nNuC.png" width="100" alt="" srcSet="" />
-              <h1 className="mb-2 text-2xl font-bold">Oásis</h1>
+              <h1 className="mb-2 text-2xl font-bold"></h1>
               <span className="text-yellow-950">Enter Login Details</span>
             </div>
             <form onSubmit={login}>
