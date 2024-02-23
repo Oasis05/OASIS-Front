@@ -74,7 +74,7 @@ function Cadastro() {
         style={{ background: "white" }}
       >
         {" "}
-        <div className="pt-10 pb-10 rounded-xl bg-lime-200 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8" style={{ maxWidth: '36rem', width: '100%' }}>
+        <div className="pt-10 pb-10 rounded-xl bg-lime-200 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8 transition-opacity duration-1000 ease-in-out hover:bg-opacity-40" style={{ maxWidth: '36rem', width: '100%' }}>
           <div className="text-green-900">
             <div className="mb-8 flex flex-col items-center">
               <img
@@ -140,7 +140,7 @@ function Cadastro() {
               <div className="mt-8 flex justify-center text-lg text-black">
                 <button
                   type="submit"
-                  className="rounded-3xl bg-lime-800 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-700"
+                  className="rounded-3xl bg-lime-800 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-lime-700"
                 >
                   Cadastrar
                 </button>
