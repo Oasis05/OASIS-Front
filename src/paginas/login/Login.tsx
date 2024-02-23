@@ -5,8 +5,6 @@ import { AuthContext } from '../../contexts/AuthContext';
 import UsuarioLogin from '../../models/UsuarioLogin';
 import globo from '../../assets/globo.gif';
 
-
-
 function Login() {
   const navigate = useNavigate();
 

@@ -5,9 +5,7 @@ import Footer from './components/footer/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './paginas/login/Login';
 import Cadastro from './paginas/cadastro/Cadastro';
-import Cadastro from './paginas/cadastro/Cadastro';
 import SobreNos from './paginas/sobreNos/SobreNos';
-import { AuthProvider } from './contexts/AuthContext';
 import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
@@ -22,7 +20,6 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/home" element={<Home />} />
               <Route path="/sobrenos" element={<SobreNos />} />
-              <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/cadastro" element={<Cadastro />} />
             </Routes>
           </div>
