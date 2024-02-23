@@ -9,8 +9,8 @@ import SobreNos from './paginas/sobreNos/SobreNos';
 function App() {
   return (
     <>
-    <BrowserRouter>
-        <Navbar />
+      <BrowserRouter>
+          <Navbar />
           <div className='min-h-[80vh]'>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -20,8 +20,9 @@ function App() {
             </Routes>
           </div>
           <Footer />
-        </BrowserRouter>
+      </BrowserRouter>
     </>
-);
+  );
 }
+
 export default App;
