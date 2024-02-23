@@ -1,7 +1,9 @@
 import './Home.css';
-
+import React, { useContext } from 'react';
+import { UserContext } from '../../contexts/AuthContext';
 
 function Home() {
+  useContext(UserContext);
   const estiloDoFundo = {
     backgroundImage: `url('https://i.imgur.com/xvzLDxo.jpg')`,
     backgroundSize: '100%',
