@@ -3,9 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import Usuario from "../../models/Usuario";
 import { cadastrarUsuario } from "../../services/Service";
 import "./Cadastro.css";
+import globo from '../../assets/globo.gif'
 
 function Cadastro() {
+
   const navigate = useNavigate();
+
+  const [isLoading, setIsLoading] = useState(false)
 
   const [confirmaSenha, setConfirmaSenha] = useState<string>("");
 
@@ -49,6 +53,8 @@ function Cadastro() {
   async function cadastrarNovoUsuario(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
 
+    setIsLoading(true)
+
     if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
       try {
         await cadastrarUsuario(
@@ -57,9 +63,13 @@ function Cadastro() {
           setUsuarioResposta
         );
         alert("Usuário cadastrado com sucesso");
+        setIsLoading(false)
+
       } catch (error) {
         alert("Erro ao cadastrar o Usuário");
+        setIsLoading(false)
       }
+
     } else {
       alert("Dados inconsistentes. Verifique as informações de cadastro.");
       setUsuario({ ...usuario, senha: "" }); // Reinicia o campo de Senha
@@ -142,7 +152,9 @@ function Cadastro() {
                   type="submit"
                   className="rounded-3xl bg-lime-800 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-lime-700"
                 >
-                  Cadastrar
+                  {isLoading ?
+                    <img className='flex justify-center' src={globo} alt="Gif de carregar" width="35px" /> :
+                    <span>Cadastrar</span>}
                 </button>
               </div>
             </form>
