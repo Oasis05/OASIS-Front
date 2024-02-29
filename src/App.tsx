@@ -30,10 +30,10 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/sobrenos" element={<SobreNos />} />
               <Route path="/cadastro" element={<Cadastro />} />
-              <Route path="/categorias/all" element={<ListaCategoria />} />
+              <Route path="/categorias" element={<ListaCategoria />} />
               <Route path="/cadastroCategoria" element={<FormularioCategoria />} />
-              <Route path="/editarCategoria/:id" element={<FormularioCategoria />} />
-              <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
+              <Route path="/editarCategoria" element={<FormularioCategoria />} />
+              <Route path="/deletarCategoria" element={<DeletarCategoria />} />
             </Routes>
           </div>
           <Footer />
