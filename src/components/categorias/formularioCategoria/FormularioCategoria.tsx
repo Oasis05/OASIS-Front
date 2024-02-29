@@ -33,9 +33,7 @@ function FormularioCategoria() {
     setCategoria({
       ...categoria,
       [e.target.name]: e.target.value
-    })
-
-    console.log(JSON.stringify(categoria))
+    });
   }
 
   async function gerarNovaCategoria(e: ChangeEvent<HTMLFormElement>) {
@@ -107,8 +105,8 @@ function FormularioCategoria() {
           <label htmlFor="descricao">Descrição da categoria</label>
           <input
             type="text"
-            placeholder="Descrição"
-            name='descricao'
+            placeholder="Tipo"
+            name='tipo'
             className="border-2 border-slate-700 rounded p-2"
             value={categoria.tipo}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
