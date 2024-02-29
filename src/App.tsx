@@ -15,6 +15,7 @@ import ListaCategoria from './components/categorias/listaCategorias/ListaCategor
 import FormularioCategoria from './components/categorias/formularioCategoria/FormularioCategoria';
 import DeletarCategoria from './components/categorias/deletarCategoria/DeletarCategoria';
 
+
 function App() {
   return (
     <AuthProvider>

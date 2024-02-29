@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // import { useContext, useEffect, useState } from "react";
 import { useContext, useEffect, useState } from "react";
-import CardCategorias from "../cardCategorias/CardCategorias";
+import CardCategorias from "../cardCategoria/CardCategoria";
 import { useNavigate } from "react-router-dom";
 import Categoria from "../../../models/Categoria";
 import { AuthContext } from "../../../contexts/AuthContext";
