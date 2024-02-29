@@ -1,19 +1,26 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+
 import Home from './paginas/home/Home';
-import Navbar from './components/navBar/NavBar';
-import Footer from './components/footer/Footer';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './paginas/login/Login';
 import Cadastro from './paginas/cadastro/Cadastro';
 import SobreNos from './paginas/sobreNos/SobreNos';
+
+import Navbar from './components/navBar/NavBar';
+import Footer from './components/footer/Footer';
 import { AuthProvider } from './contexts/AuthContext';
-import ListaCategorias from './components/categorias/listaCategorias/ListaCategorias';
+
+import ListaCategoria from './components/categorias/listaCategoria/ListaCategoria';
+import FormularioCategoria from './components/categorias/formularioCategoria/FormularioCategoria';
+import DeletarCategoria from './components/categorias/deletarCategoria/DeletarCategoria';
 
 function App() {
   return (
-    <>
-      <AuthProvider>
-        <BrowserRouter>
+    <AuthProvider>
+      <Router>
+        <div>
+
           <Navbar />
           <div className="min-h-[80vh]">
             <Routes>
@@ -23,12 +30,18 @@ function App() {
               <Route path="/categorias" element={<ListaCategorias/>} />
               <Route path="/sobrenos" element={<SobreNos />} />
               <Route path="/cadastro" element={<Cadastro />} />
+              <Route path="/categorias/all" element={<ListaCategoria />} />
+              <Route path="/cadastroCategoria" element={<FormularioCategoria />} />
+              <Route path="/editarCategoria/:id" element={<FormularioCategoria />} />
+              <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
             </Routes>
           </div>
           <Footer />
-        </BrowserRouter>
-      </AuthProvider>
-    </>
+
+        </div>
+      </Router>
+    </AuthProvider>
+
   );
 }
 
