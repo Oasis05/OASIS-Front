@@ -1,27 +1,25 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
 
-import Home from './paginas/home/Home';
-import Login from './paginas/login/Login';
-import Cadastro from './paginas/cadastro/Cadastro';
-import SobreNos from './paginas/sobreNos/SobreNos';
+import Home from "./paginas/home/Home";
+import Login from "./paginas/login/Login";
+import Cadastro from "./paginas/cadastro/Cadastro";
+import SobreNos from "./paginas/sobreNos/SobreNos";
 
-import Navbar from './components/navBar/NavBar';
-import Footer from './components/footer/Footer';
-import { AuthProvider } from './contexts/AuthContext';
+import Navbar from "./components/navBar/NavBar";
+import Footer from "./components/footer/Footer";
+import { AuthProvider } from "./contexts/AuthContext";
 
-import ListaCategoria from './components/categorias/listaCategorias/ListaCategorias';
-import FormularioCategoria from './components/categorias/formularioCategoria/FormularioCategoria';
-import DeletarCategoria from './components/categorias/deletarCategoria/DeletarCategoria';
-
+import ListaCategoria from "./components/categorias/listaCategorias/ListaCategorias";
+import FormularioCategoria from "./components/categorias/formularioCategoria/FormularioCategoria";
+import DeletarCategoria from "./components/categorias/deletarCategoria/DeletarCategoria";
 
 function App() {
   return (
     <AuthProvider>
       <Router>
         <div>
-
           <Navbar />
           <div className="min-h-[80vh]">
             <Routes>
@@ -31,17 +29,24 @@ function App() {
               <Route path="/sobrenos" element={<SobreNos />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/categorias" element={<ListaCategoria />} />
-              <Route path="/cadastroCategoria" element={<FormularioCategoria />} />
-              <Route path="/editarCategoria" element={<FormularioCategoria />} />
-              <Route path="/deletarCategoria" element={<DeletarCategoria />} />
+              <Route
+                path="/cadastroCategoria"
+                element={<FormularioCategoria />}
+              />
+              <Route
+                path="/editarCategoria/:id"
+                element={<FormularioCategoria />}
+              />
+              <Route
+                path="/deletarCategoria/:id"
+                element={<DeletarCategoria />}
+              />{" "}
             </Routes>
           </div>
           <Footer />
-
         </div>
       </Router>
     </AuthProvider>
-
   );
 }
 
