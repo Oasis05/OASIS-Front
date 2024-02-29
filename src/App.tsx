@@ -7,24 +7,26 @@ import Login from './paginas/login/Login';
 import Cadastro from './paginas/cadastro/Cadastro';
 import SobreNos from './paginas/sobreNos/SobreNos';
 import { AuthProvider } from './contexts/AuthContext';
+import ListaCategorias from './components/categorias/listaCategorias/ListaCategorias';
 
 function App() {
   return (
     <>
-    <AuthProvider>
-      <BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
           <Navbar />
-          <div className='min-h-[80vh]'>
+          <div className="min-h-[80vh]">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/home" element={<Home />} />
+              <Route path="/categorias" element={<ListaCategorias/>} />
               <Route path="/sobrenos" element={<SobreNos />} />
               <Route path="/cadastro" element={<Cadastro />} />
             </Routes>
           </div>
           <Footer />
-      </BrowserRouter>
+        </BrowserRouter>
       </AuthProvider>
     </>
   );
