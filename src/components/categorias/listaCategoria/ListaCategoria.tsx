@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Dna } from "react-loader-spinner";
-import Categoria from "../../../models/Categorias";
+import Categoria from "../../../models/Categoria";
 import { buscar } from "../../../services/Service";
 import CardCategorias from "../cardCategoria/CardCategoria";
 
