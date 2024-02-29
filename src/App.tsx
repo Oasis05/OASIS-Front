@@ -11,7 +11,7 @@ import Navbar from './components/navBar/NavBar';
 import Footer from './components/footer/Footer';
 import { AuthProvider } from './contexts/AuthContext';
 
-import ListaCategoria from './components/categorias/listaCategoria/ListaCategoria';
+import ListaCategoria from './components/categorias/listaCategorias/ListaCategorias';
 import FormularioCategoria from './components/categorias/formularioCategoria/FormularioCategoria';
 import DeletarCategoria from './components/categorias/deletarCategoria/DeletarCategoria';
 
@@ -27,7 +27,6 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/categorias" element={<ListaCategorias/>} />
               <Route path="/sobrenos" element={<SobreNos />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/categorias/all" element={<ListaCategoria />} />
