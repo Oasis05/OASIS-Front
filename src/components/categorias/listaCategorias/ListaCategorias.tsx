@@ -8,8 +8,8 @@ import { useNavigate } from "react-router-dom";
 import Categoria from "../../../models/Categoria";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { buscar } from "../../../services/Service";
-import { Dna } from "react-loader-spinner";
 import { toastAlerta } from "../../../utils/toastAlerta";
+import { ThreeDots } from "react-loader-spinner";
 
 function ListaCategorias() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -46,15 +46,16 @@ function ListaCategorias() {
   return (
     <>
       {categorias.length === 0 && (
-        <Dna
+        <ThreeDots
           visible={true}
-          height="200"
-          width="200"
-          ariaLabel="dna-loading"
+          height="100"
+          width="100"
+          color="#4fa94d"
+          radius="9"
+          ariaLabel="three-dots-loading"
           wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
-        />
-      )}
+          wrapperClass="ThreeDots-wrapper flex justify-center mx-auto"
+        />)}
       <div className="flex justify-center w-full my-4">
         <div className="container flex flex-col">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -71,5 +72,5 @@ function ListaCategorias() {
 }
 
 export default ListaCategorias;
- 
+
 

@@ -1,14 +1,11 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable prefer-const */
 import { useContext, useEffect, useState } from 'react';
-import { Dna } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Produto from '../../../models/Produto';
 import { buscar } from '../../../services/Service';
 import CardProduto from '../cardProdutos/CardProdutos';
 import { toastAlerta } from '../../../utils/toastAlerta';
+import { ThreeDots } from 'react-loader-spinner';
 
 function ListaProdutos() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -46,15 +43,16 @@ function ListaProdutos() {
   return (
     <>
       {produtos.length === 0 && (
-        <Dna
+        <ThreeDots
           visible={true}
-          height="200"
-          width="200"
-          ariaLabel="dna-loading"
+          height="100"
+          width="100"
+          color="#4fa94d"
+          radius="9"
+          ariaLabel="three-dots-loading"
           wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
-        />
-      )}
+          wrapperClass="ThreeDots-wrapper flex justify-center mx-auto"
+        />)}
       <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {produtos.map((produtos) => (
           <CardProduto key={produtos.id} prod={produtos} />
