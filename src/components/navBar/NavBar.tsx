@@ -9,6 +9,7 @@ import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useContext } from "react";
 import { buscar } from '../../services/Service';
 import Categoria from '../../models/Categoria';
+import { toastAlerta } from '../../utils/toastAlerta';
 
 
 function Navbar() {
@@ -18,7 +19,7 @@ function Navbar() {
 
   function logout() {
     handleLogout();
-    alert("Usuário deslogado com sucesso");
+    toastAlerta("Usuário deslogado com sucesso", "sucesso");
     navigate("/login");
   }
 
@@ -107,15 +108,7 @@ function Navbar() {
         <img src={Logo} className="xl:w-15 sm:w-14" alt="Logo" />
       </Link>
 
-      <div className="text-darkMossGreen p-4 grid gap-7 grid-flow-col items-center font-bold text-[13.5px] ]">
-        <Link to='/home' className='hover:text-lime-700 uppercase'>Home</Link>
-        <Link to='/produtos' className='hover:text-lime-700 uppercase'>Produtos</Link>
-        <Link to='/categorias' className='hover:text-lime-700 uppercase'>Categorias</Link>
-        <Link to='/sobreNos' className='hover:text-lime-700 uppercase'>Sobre Nós</Link>
-        <Link to='/login' className='hover:text-lime-700 uppercase'>Login</Link>
-        <div onClick={logout} className='hover:text-lime-700 uppercase cursor-pointer'>Sair</div>
-
-        <div className="div-focus flex p-[5px] rounded-full self-center  bg-seasalt border border-emerald input-pesquisa">
+      <div className="div-focus flex p-[5px] rounded-full self-center  bg-seasalt border border-emerald input-pesquisa">
           <input
             type="text"
             placeholder="Pesquisar"
@@ -131,6 +124,14 @@ function Navbar() {
             <img className="w-4 self-center" src={SearchIcon} alt="Search" />
           </button>
         </div>
+
+      <div className="p-4 grid gap-7 grid-flow-col items-center font-bold text-[13.5px] ]">
+        <Link to='/home' className='hover:text-lime-700 uppercase'>Home</Link>
+        <Link to='/produtos' className='hover:text-lime-700 uppercase'>Produtos</Link>
+        <Link to='/categorias' className='hover:text-lime-700 uppercase'>Categorias</Link>
+        <Link to='/sobreNos' className='hover:text-lime-700 uppercase'>Sobre Nós</Link>
+
+        
 
         <div className="gap-3 justify-around flex items-center p-3">
           <div className="flex rounded-[12rem]  items-center border border-emerald p-[5px]">

@@ -10,7 +10,7 @@ function ModalProdutos() {
   return (
     <>
       <Popup 
-      trigger={<button className='border rounded px-4 hover:bg-white hover:text-indigo-800'>Nova postagem</button>} modal>
+      trigger={<button className='border rounded px-4 hover:bg-white hover:text-indigo-800'>Novo produto</button>} modal>
         <div>
           <FormularioProduto />
         </div>
