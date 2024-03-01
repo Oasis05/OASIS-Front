@@ -103,55 +103,53 @@ function Navbar() {
   }
 
   return (
-    <header className='bg-lime-50 text-yellow-950 w-full text-green flex justify-between align-middle py-[1rem] px-[4rem] '>
-      <Link to="/home">
-        <img src={Logo} className="xl:w-15 sm:w-14" alt="Logo" />
-      </Link>
+    <header className='bg-gradient-to-br from-teal-950 to-lime-100 text-yellow-950 w-full text-green flex justify-between items-center py-[0.3rem] px-[4rem]'>
+  <Link to="/home">
+    <img src={Logo} className="xl:w-15 sm:w-14" alt="Logo" />
+  </Link>
 
-      <div className="div-focus flex p-[5px] rounded-full self-center  bg-seasalt border border-emerald input-pesquisa">
-          <input
-            type="text"
-            placeholder="Pesquisar"
-            name="descricao"
-            value={termoPesquisa}
-            onChange={(e) => setTermoPesquisa(e.target.value)}
-            className="w-[16vw] h-[10px] border-none rounded-full p-2 self-center input-pesquisa"
-          />
-          <button
-            onClick={handlePesquisa}
-            className="group bg-emerald rounded-full w-7 h-7 flex justify-center"
-          >
-            <img className="w-4 self-center" src={SearchIcon} alt="Search" />
-          </button>
-        </div>
+  <div className="div-focus flex p-[5px] rounded-full self-center border border-emerald input-pesquisa items-center">
+  <input
+    type="text"
+    placeholder="Pesquisar"
+    name="descricao"
+    value={termoPesquisa}
+    onChange={(e) => setTermoPesquisa(e.target.value)}
+    className="w-[16vw] h-[10px] border-none rounded-full p-2 self-center input-pesquisa bg-transparent text-white"
+  />
+  <button
+    onClick={handlePesquisa}
+    className="group bg-emerald rounded-full w-7 h-7 flex justify-center"
+  >
+    <img className="w-4 self-center" src={SearchIcon} alt="Search" />
+  </button>
+</div>
 
-      <div className="p-4 grid gap-7 grid-flow-col items-center font-bold text-[13.5px] ]">
-        <Link to='/home' className='hover:text-lime-700 uppercase'>Home</Link>
-        <Link to='/produtos' className='hover:text-lime-700 uppercase'>Produtos</Link>
-        <Link to='/categorias' className='hover:text-lime-700 uppercase'>Categorias</Link>
-        <Link to='/sobreNos' className='hover:text-lime-700 uppercase'>Sobre Nós</Link>
+  <div className="p-4 grid gap-7 grid-flow-col items-center font-bold text-[13.5px]">
+    <Link to='/home' className='hover:text-lime-700 uppercase'>Home</Link>
+    <Link to='/produtos' className='hover:text-lime-700 uppercase'>Produtos</Link>
+    <Link to='/categorias' className='hover:text-lime-700 uppercase'>Categorias</Link>
+    <Link to='/sobreNos' className='hover:text-lime-700 uppercase'>Sobre Nós</Link>
 
-        
-
-        <div className="gap-3 justify-around flex items-center p-3">
-          <div className="flex rounded-[12rem]  items-center border border-emerald p-[5px]">
-            <Menu
-              as="div"
-              className="relative inline-block text-darkMossGreen"
-            >
-              <div className="flex group">
-                <Menu.Button className="transition duration-300 ease-in-out group-hover:text-sunglow inline-flex w-full">
-                  <img src={User} className="w-7"></img>
-                  <p className="flex headerBtn ps-2 pe-1 items-center self-center">
-                    Perfil
-                  </p>
-                  <CaretDown
-                    size={10}
-                    className="me-2 self-center text-darkMossGreen text-[12px] transition duration-300 ease-in-out group-hover:text-sunglow"
-                    weight="bold"
-                    aria-hidden="true"
-                  />
-                </Menu.Button>
+    <div className="gap-3 justify-around flex items-center p-3">
+      <div className="flex rounded-[12rem] items-center border border-emerald p-[5px]">
+        <Menu
+          as="div"
+          className="relative inline-block text-darkMossGreen"
+        >
+          <div className="flex group">
+            <Menu.Button className="transition duration-300 ease-in-out group-hover:text-sunglow inline-flex w-full">
+              <img src={User} className="w-7" alt="User Icon"></img>
+              <p className="flex headerBtn ps-2 pe-1 items-center self-center">
+                Perfil
+              </p>
+              <CaretDown
+                size={10}
+                className="me-2 self-center text-darkMossGreen text-[12px] transition duration-300 ease-in-out group-hover:text-sunglow"
+                weight="bold"
+                aria-hidden="true"
+              />
+            </Menu.Button>
               </div>
 
             <Transition
