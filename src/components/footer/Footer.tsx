@@ -1,4 +1,9 @@
-import { FacebookLogo, InstagramLogo, GithubLogo } from '@phosphor-icons/react'
+import Facebook from "../../assets/icons/facebook.svg";
+import Instagram from "../../assets/icons/instagram.svg";
+import Pinterest from "../../assets/icons/pinterest.svg";
+import Twitter from "../../assets/icons/twitter.svg";
+import GitHub from "../../assets/icons/github.svg";
+
 
 function Footer() {
 
@@ -6,19 +11,19 @@ function Footer() {
 
   return (
     <>
-      <div className="flex justify-center bg-gradient-to-br from-teal-950 to-lime-100 text-yellow-950">
+      <div className="flex justify-center bg-gradient-to-br from-teal-50 to-lime-100 text-yellow-950">
         <div className="container flex flex-col items-center py-4">
           <p className='text-xl font-bold'>Oasis | Copyright: </p>
           <p className='text-lg'>Acesse nossas redes sociais</p>
-          <div className='flex gap-2'>
-            <a href="https://github.com/Oasis05" target="_blank">
-              <GithubLogo size={48} weight='bold' />
-            </a>
-            <InstagramLogo size={48} weight='bold' />
-            <FacebookLogo size={48} weight='bold' />
+          <div className="flex justify-center gap-3 ">
+            <img src={Instagram} className="w-9 h-9"></img>
+            <img src={Facebook} className="w-9 h-9"></img>
+            <img src={Twitter} className="w-9 h-9"></img>
+            <img src={Pinterest} className="w-9 h-9"></img>
+            <a href="https://github.com/Oasis05" target="_blank"><img src={GitHub} className="w-9 h-9"></img></a>
           </div>
         </div>
-      </div>
+        </div>
 
       <div className="flex justify-center border-t-2 py-2 ">
         <p className="paragraph me-1">Copyright © </p>

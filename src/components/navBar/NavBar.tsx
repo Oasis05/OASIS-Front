@@ -103,7 +103,7 @@ function Navbar() {
   }
 
   return (
-    <header className='bg-gradient-to-br from-teal-950 to-lime-100 text-yellow-950 w-full text-green flex justify-between items-center py-[0.3rem] px-[4rem]'>
+    <header className='bg-gradient-to-br from-teal-50 to-lime-100 text-yellow-950 w-full text-green flex justify-between items-center py-[0.3rem] px-[4rem]'>
   <Link to="/home">
     <img src={Logo} className="xl:w-15 sm:w-14" alt="Logo" />
   </Link>
