@@ -10,13 +10,12 @@ function CardProduto({prod}: CardProdutoProps) {
     <div className='border-slate-900 border flex flex-col rounded overflow-hidden justify-between'>
       <div>
         <div className="flex w-full bg-indigo-400 py-2 px-4 items-center gap-4">
-          <img src={prod.usuario?.foto} className='h-12 rounded-full' alt="" />
-          <h3 className='text-lg font-bold text-center uppercase '>{prod.usuario?.nome}</h3>
+        <h4 className='text-lg font-semibold uppercase'>{prod.nome}</h4>
         </div>
         <div className='p-4 '>
           <h4 className='text-lg font-semibold uppercase'>{prod.preco}</h4>
           <p>{prod.quantidade}</p>
-          <p>Tema: {prod.categoria?.tipo}</p>
+          <p>Categoria: {prod.categoria?.tipo}</p>
           <p>Data: {new Intl.DateTimeFormat(undefined, {
                     dateStyle: 'full',
                     timeStyle: 'medium',
