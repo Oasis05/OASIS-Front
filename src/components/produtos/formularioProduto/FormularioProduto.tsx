@@ -1,9 +1,13 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable prefer-const */
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Produto from '../../../models/Produto';
 import { buscar, atualizar, cadastrar } from '../../../services/Service';
 import Categoria from '../../../models/Categoria';
+import { toastAlerta } from '../../../utils/toastAlerta';
 
 
 function FormularioProduto() {
@@ -57,7 +61,7 @@ function FormularioProduto() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado');
+      toastAlerta("Você precisa estar logado", "info");
       navigate('/');
     }
   }, [token]);
@@ -103,14 +107,14 @@ function FormularioProduto() {
             Authorization: token,
           },
         });
-        alert('Produto atualizado com sucesso');
+        toastAlerta("Produto atualizado com sucesso", "sucesso");
         retornar();
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          alert('O token expirou, favor logar novamente')
+          toastAlerta("O token expirou, favor logar novamente", "info");
           handleLogout()
         } else {
-          alert('Erro ao atualizar o Produto');
+          toastAlerta("Erro ao atualizar o Produto", "erro");
         }
       }
     } else {
@@ -121,14 +125,14 @@ function FormularioProduto() {
           },
         });
 
-        alert('Produto cadastrado com sucesso');
+        toastAlerta("Produto cadastrado com sucesso", "sucesso");
         retornar();
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          alert('O token expirou, favor logar novamente')
+          toastAlerta("O token expirou, favor logar novamente", "info");
           handleLogout()
         } else {
-          alert('Erro ao cadastrar o Produto');
+          toastAlerta('Erro ao cadastrar o Produto', "erro");
         }
       }
     }
@@ -147,20 +151,20 @@ function FormularioProduto() {
             value={produto.nome}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             type="text"
-            placeholder="Titulo"
-            name="titulo"
+            placeholder="Nome"
+            name="nome"
             required
             className="border-2 border-slate-700 rounded p-2"
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Texto do Produto</label>
+          <label htmlFor="titulo">Valor do Produto</label>
           <input
             value={produto.preco}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            type="text"
-            placeholder="Texto"
-            name="texto"
+            type="number"
+            placeholder="Valor"
+            name="preco"
             required
             className="border-2 border-slate-700 rounded p-2"
           />

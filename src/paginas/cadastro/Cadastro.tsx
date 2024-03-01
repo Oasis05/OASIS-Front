@@ -1,13 +1,16 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+/* eslint-disable prefer-const */
+/* eslint-disable react-hooks/exhaustive-deps */
+import  { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Usuario from "../../models/Usuario";
 import { cadastrarUsuario } from "../../services/Service";
 import "./Cadastro.css";
 import globo from '../../assets/globo.gif'
+import { toastAlerta } from "../../utils/toastAlerta";
 
 function Cadastro() {
 
-  const navigate = useNavigate();
+  let navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState(false)
 
@@ -62,18 +65,21 @@ function Cadastro() {
           usuario,
           setUsuarioResposta
         );
-        alert("Usuário cadastrado com sucesso");
+        toastAlerta("Usuário cadastrado com sucesso", "sucesso");
         setIsLoading(false)
 
       } catch (error) {
-        alert("Erro ao cadastrar o Usuário");
+        toastAlerta("Erro ao cadastrar o Usuário", "erro");
         setIsLoading(false)
       }
 
     } else {
-      alert("Dados inconsistentes. Verifique as informações de cadastro.");
-      setUsuario({ ...usuario, senha: "" }); // Reinicia o campo de Senha
-      setConfirmaSenha(""); // Reinicia o campo de Confirmar Senha
+      toastAlerta(
+        "Dados inconsistentes. Verifique as informações de cadastro.",
+        "info"
+      );
+      setUsuario({ ...usuario, senha: "" }); 
+      setConfirmaSenha(""); 
     }
   }
 

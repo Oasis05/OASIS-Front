@@ -9,6 +9,7 @@ import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useContext } from "react";
 import { buscar } from '../../services/Service';
 import Categoria from '../../models/Categoria';
+import { toastAlerta } from '../../utils/toastAlerta';
 
 
 function Navbar() {
@@ -18,7 +19,7 @@ function Navbar() {
 
   function logout() {
     handleLogout();
-    alert("Usuário deslogado com sucesso");
+    toastAlerta("Usuário deslogado com sucesso", "sucesso");
     navigate("/login");
   }
 

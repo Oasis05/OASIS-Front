@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable prefer-const */
 import { useContext, useEffect, useState } from 'react';
 import { Dna } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
@@ -5,6 +8,7 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import Produto from '../../../models/Produto';
 import { buscar } from '../../../services/Service';
 import CardProduto from '../cardProdutos/CardProdutos';
+import { toastAlerta } from '../../../utils/toastAlerta';
 
 function ListaProdutos() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -16,7 +20,7 @@ function ListaProdutos() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado');
+      toastAlerta("Você precisa estar logado", "info");
       navigate('/');
     }
   }, [token]);
@@ -30,7 +34,7 @@ function ListaProdutos() {
       });
     } catch (error: any) {
       if (error.toString().includes('403')) {
-        alert('O token expirou, favor logar novamente')
+        toastAlerta("O token expirou, favor logar novamente", "info");
         handleLogout()
       }
     }
