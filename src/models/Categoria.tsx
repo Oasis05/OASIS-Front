@@ -1,4 +1,5 @@
 export default interface Categoria {
-    id: number;
-    descricao: string;
-  }
+  id: number;
+  tipo: string;
+}
+
