@@ -109,7 +109,7 @@ function Navbar() {
 
       <div className="text-darkMossGreen p-4 grid gap-7 grid-flow-col items-center font-bold text-[13.5px] ]">
         <Link to='/home' className='hover:text-lime-700 uppercase'>Home</Link>
-        <div className='hover:text-lime-700 uppercase'>Produtos</div>
+        <Link to='/produtos' className='hover:text-lime-700 uppercase'>Produtos</Link>
         <Link to='/categorias' className='hover:text-lime-700 uppercase'>Categorias</Link>
         <Link to='/sobreNos' className='hover:text-lime-700 uppercase'>Sobre Nós</Link>
         <Link to='/login' className='hover:text-lime-700 uppercase'>Login</Link>
