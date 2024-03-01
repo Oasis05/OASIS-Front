@@ -1,7 +1,6 @@
 import './Home.css';
 import ListaProdutos from "../../components/produtos/listaProdutos/ListaProdutos";
 import ModalProdutos from "../../components/produtos/modalProdutos/ModalProdutos";
-import { Link, useNavigate } from "react-router-dom";
 
 
 function Home() { 
@@ -20,12 +19,7 @@ function Home() {
                 Ver produtos
               </button>
             <div className="flex space-x-4">
-  <button className="rounded bg-lime-800 bg-opacity-50 text-white py-2 px-4 shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-lime-700">
-    Produtos
-  </button>
-  <button className="rounded bg-lime-800 bg-opacity-50 text-white py-2 px-4 shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-lime-700">
-    Categorias
-  </button>
+
 </div>
             </div>
           </div>
