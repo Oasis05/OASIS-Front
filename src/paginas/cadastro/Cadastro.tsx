@@ -15,6 +15,7 @@ function Cadastro() {
   const [isLoading, setIsLoading] = useState(false)
 
   const [confirmaSenha, setConfirmaSenha] = useState<string>("");
+  
 
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
@@ -33,6 +34,8 @@ function Cadastro() {
     tipo: "",
     foto: "",
   });
+
+
 
   function handleTipoUsuario(e: ChangeEvent<HTMLSelectElement>) {
     setUsuario({

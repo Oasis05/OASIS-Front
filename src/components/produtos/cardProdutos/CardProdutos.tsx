@@ -21,8 +21,8 @@ function CardProduto({ prod }: CardProdutoProps) {
       <div
         className='absolute inset-0 bg-cover bg-center z-0'
         style={{
-          backgroundImage: `url('https://imgur.com/aNuccNU.jpg')`, // URL da imagem de fundo
-          opacity: 0.5, // Opacidade ajustada para 50%
+          backgroundImage: `url('https://imgur.com/aNuccNU.jpg')`, 
+          opacity: 0.5, 
         }}
       ></div>
       <div className='p-1 bg-lime-200'></div>

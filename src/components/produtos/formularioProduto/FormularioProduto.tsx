@@ -28,9 +28,10 @@ function FormularioProduto() {
   const [produto, setProduto] = useState<Produto>({
     id: 0,
     nome: '',
-    preco: '',
+    preco: 0,
     dataValidade: '',
-    quantidade: '',
+    quantidade: 0,
+    foto: '',
     categoria: null,
     usuario: null,
   });
