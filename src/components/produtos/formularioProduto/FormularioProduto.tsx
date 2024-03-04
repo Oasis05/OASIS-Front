@@ -171,6 +171,42 @@ function FormularioProduto() {
           />
         </div>
         <div className="flex flex-col gap-2">
+          <label htmlFor="titulo">Data de validade</label>
+          <input
+            value={produto.dataValidade}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            type="date"
+            placeholder="Data de Validade"
+            name="dataValidade"
+            required
+            className="border-2 border-slate-700 rounded p-2"
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="titulo">Estoque do produto</label>
+          <input
+            value={produto.quantidade}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            type="number"
+            placeholder="Estoque"
+            name="quantidade"
+            required
+            className="border-2 border-slate-700 rounded p-2"
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="titulo">Foto do produto</label>
+          <input
+            value={produto.foto}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            type="link"
+            placeholder="Foto"
+            name="foto"
+            required
+            className="border-2 border-slate-700 rounded p-2"
+          />
+        </div>
+        <div className="flex flex-col gap-2">
           <p>Categoria do produto</p>
           <select name="categoria" id="categoria" className='border p-2 border-slate-800 rounded' onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
             <option value="" selected disabled>Selecione uma categoria</option>
