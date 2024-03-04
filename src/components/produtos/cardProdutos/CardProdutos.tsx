@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Produto from '../../../models/Produto';
+import { AuthContext } from "../../../contexts/AuthContext";
 
 interface CardProdutoProps {
   prod: Produto;
@@ -12,6 +13,8 @@ function CardProduto({ prod }: CardProdutoProps) {
   const toggleOptions = () => {
     setShowOptions(!showOptions);
   };
+
+  const {usuario} = useContext(AuthContext);
 
   return (
     <div className='bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105 relative uppercase'>
@@ -62,6 +65,8 @@ function CardProduto({ prod }: CardProdutoProps) {
             </li>
           </ul>
         )}
+        
+        {usuario.tipo === "1" ? 
         <button
           onClick={toggleOptions}
           className="absolute top-0 right-0 mt-2 mr-2 p-2 focus:outline-none z-10"
@@ -81,6 +86,9 @@ function CardProduto({ prod }: CardProdutoProps) {
             />
           </svg>
         </button>
+          :       
+        <div></div>
+        }
       </div>
     </div>
   );

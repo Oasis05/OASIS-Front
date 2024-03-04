@@ -4,5 +4,6 @@ export default interface UsuarioLogin {
     usuario: string;
     foto: string;
     senha: string;
+    tipo: string,
     token: string;
   }
