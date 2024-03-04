@@ -15,7 +15,7 @@ function Cadastro() {
   const [isLoading, setIsLoading] = useState(false)
 
   const [confirmaSenha, setConfirmaSenha] = useState<string>("");
-  
+
 
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
@@ -36,12 +36,33 @@ function Cadastro() {
   });
 
 
-
   function handleTipoUsuario(e: ChangeEvent<HTMLSelectElement>) {
     setUsuario({
       ...usuario,
       tipo: (e.target.value),
     });
+    if (e.target.value === "1") {
+      const senhaVendedor = prompt("Por favor, insira a senha de vendedor:");
+
+      if (senhaVendedor === "oasis5") {
+      } else if (senhaVendedor === null) {
+        setUsuario({
+          ...usuario,
+          tipo: "2"
+        });
+      } else {
+        const tentarNovamente = confirm("Senha incorreta. Deseja tentar novamente?");
+        if (tentarNovamente) {
+          handleTipoUsuario(e); // Chamar a função novamente para solicitar a senha
+        } else {
+          setUsuario({
+            ...usuario,
+            tipo: "2"
+          });
+        }
+      }
+
+    }
   }
 
   useEffect(() => {
@@ -179,7 +200,7 @@ function Cadastro() {
                   <option value={"2"}>Usuário</option>
                 </select>
               </div>
-              
+
               <div className="mt-8 flex justify-center text-lg text-black">
                 <button
                   type="submit"
