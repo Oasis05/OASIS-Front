@@ -15,7 +15,7 @@ import { toastAlerta } from '../../utils/toastAlerta';
 function Navbar() {
   const navigate = useNavigate();
 
-  const { usuario, handleLogout } = useContext(AuthContext);
+  const {usuario, handleLogout} = useContext(AuthContext);
 
   function logout() {
     handleLogout();
@@ -39,7 +39,6 @@ function Navbar() {
 
   const handlePesquisa = () => {
     if (termoPesquisa) {
-      // Navegue para a rota de pesquisa incluindo o termo como parte da URL
       navigate(`/produtos/nomes/${termoPesquisa}`);
     }
   };
@@ -104,67 +103,74 @@ function Navbar() {
 
   return (
     <header className='bg-gradient-to-br from-teal-50 to-lime-100 text-yellow-950 w-full text-green flex justify-between items-center py-[0.3rem] px-[4rem]'>
-  <Link to="/home">
-    <img src={Logo} className="xl:w-15 sm:w-14" alt="Logo" />
-  </Link>
+      <Link to="/home">
+        <img src={Logo} className="xl:w-15 sm:w-14" alt="Logo" />
+      </Link>
 
-  <div className="div-focus flex p-[5px] rounded-full self-center border border-emerald input-pesquisa items-center">
-  <input
-    type="text"
-    placeholder="Pesquisar"
-    name="descricao"
-    value={termoPesquisa}
-    onChange={(e) => setTermoPesquisa(e.target.value)}
-    className="w-[16vw] h-[10px] border-none rounded-full p-2 self-center input-pesquisa bg-transparent text-white"
-  />
-  <button
-    onClick={handlePesquisa}
-    className="group bg-emerald rounded-full w-7 h-7 flex justify-center"
-  >
-    <img className="w-4 self-center" src={SearchIcon} alt="Search" />
-  </button>
-</div>
-
-  <div className="p-4 grid gap-7 grid-flow-col items-center font-bold text-[13.5px]">
-    <Link to='/home' className='hover:text-lime-700 uppercase'>Home</Link>
-    <Link to='/produtos' className='hover:text-lime-700 uppercase'>Produtos</Link>
-    <Link to='/categorias' className='hover:text-lime-700 uppercase'>Categorias</Link>
-    <Link to='/sobreNos' className='hover:text-lime-700 uppercase'>Sobre Nós</Link>
-
-    <div className="gap-3 justify-around flex items-center p-3">
-      <div className="flex rounded-[12rem] items-center border border-emerald p-[5px]">
-        <Menu
-          as="div"
-          className="relative inline-block text-darkMossGreen"
+      <div className="div-focus flex p-[5px] rounded-full self-center border border-emerald input-pesquisa items-center">
+        <input
+          type="text"
+          placeholder="Pesquisar"
+          name="descricao"
+          value={termoPesquisa}
+          onChange={(e) => setTermoPesquisa(e.target.value)}
+          className="w-[16vw] h-[10px] border-none rounded-full p-2 self-center input-pesquisa bg-transparent text-white"
+        />
+        <button
+          onClick={handlePesquisa}
+          className="group bg-emerald rounded-full w-7 h-7 flex justify-center"
         >
-          <div className="flex group">
-            <Menu.Button className="transition duration-300 ease-in-out group-hover:text-sunglow inline-flex w-full">
-              <img src={User} className="w-7" alt="User Icon"></img>
-              <p className="flex headerBtn ps-2 pe-1 items-center self-center">
-                Perfil
-              </p>
-              <CaretDown
-                size={10}
-                className="me-2 self-center text-darkMossGreen text-[12px] transition duration-300 ease-in-out group-hover:text-sunglow"
-                weight="bold"
-                aria-hidden="true"
-              />
-            </Menu.Button>
+          <img className="w-4 self-center" src={SearchIcon} alt="Search" />
+        </button>
+      </div>
+
+      <div className="p-4 grid gap-7 grid-flow-col items-center font-bold text-[13.5px]">
+        <Link to='/home' className='hover:text-lime-700 uppercase'>Home</Link>
+        <Link to='/produtos' className='hover:text-lime-700 uppercase'>Produtos</Link>
+        <Link to='/categorias' className='hover:text-lime-700 uppercase'>Categorias</Link>
+        <Link to='/sobreNos' className='hover:text-lime-700 uppercase'>Sobre Nós</Link>
+        {usuario.tipo === "1" ?
+          <>
+            <Link to='/cadastroCategoria' className='hover:text-lime-700 uppercase'>Cadastrar Categoria</Link>
+            <Link to='/cadastroProduto' className='hover:text-lime-700 uppercase'>Cadastrar Produto</Link>
+          </>
+        : <div></div>
+        }
+
+        <div className="gap-3 justify-around flex items-center p-3">
+          <div className="flex rounded-[12rem] items-center border border-emerald p-[5px]">
+            <Menu
+              as="div"
+              className="relative inline-block text-darkMossGreen"
+            >
+              <div className="flex group">
+                <Menu.Button className="transition duration-300 ease-in-out group-hover:text-sunglow inline-flex w-full">
+                  <img src={User} className="w-7" alt="User Icon"></img>
+                  <p className="flex headerBtn ps-2 pe-1 items-center self-center">
+                    Perfil
+                  </p>
+                  <CaretDown
+                    size={10}
+                    className="me-2 self-center text-darkMossGreen text-[12px] transition duration-300 ease-in-out group-hover:text-sunglow"
+                    weight="bold"
+                    aria-hidden="true"
+                  />
+                </Menu.Button>
               </div>
 
-            <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
-                  {userDropDown}
-                </Transition>
-              </Menu>
-            </div>
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+              >
+                {userDropDown}
+              </Transition>
+            </Menu>
+          </div>
         </div>
       </div>
     </header>
