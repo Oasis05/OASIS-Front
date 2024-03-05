@@ -139,8 +139,6 @@ function FormularioProduto() {
     }
   }
 
-  const carregandoCategoria = categoria.tipo === '';
-
   return (
     <div className="bg-white h-screen flex flex-col items-center justify-center text-start">
       <h1 className="text-4xl font-bold text-black">{id !== undefined ? 'Editar Produto' : 'Cadastrar Produto'}</h1>
@@ -215,7 +213,7 @@ function FormularioProduto() {
             ))}
           </select>
         </div>
-        <button disabled={carregandoCategoria} type='submit' className='mt-4 bg-lime-800 py-2 px-4 text-white rounded-md hover:bg-lime-700 focus:outline-none'>
+        <button type='submit' className='mt-4 bg-lime-800 py-2 px-4 text-white rounded-md hover:bg-lime-700 focus:outline-none'>
           Editar
         </button>
       </form>
