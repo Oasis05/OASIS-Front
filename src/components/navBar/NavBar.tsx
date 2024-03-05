@@ -102,7 +102,7 @@ function Navbar() {
   }
 
   return (
-    <header className='bg-gradient-to-br from-teal-50 to-lime-100 text-yellow-950 w-full text-green flex justify-between items-center py-[0.3rem] px-[4rem]'>
+    <header className=' text-lime-950 w-full text-green flex justify-between items-center py-[0.3rem] px-[4rem]' style={{ backgroundColor: 'rgba(33, 59, 28, 0.71)'}}>
       <Link to="/home">
         <img src={Logo} className="xl:w-15 sm:w-14" alt="Logo" />
       </Link>
@@ -125,14 +125,14 @@ function Navbar() {
       </div>
 
       <div className="p-4 grid gap-7 grid-flow-col items-center font-bold text-[13.5px]">
-        <Link to='/home' className='hover:text-lime-700 uppercase'>Home</Link>
-        <Link to='/sobreNos' className='hover:text-lime-700 uppercase'>Sobre Nós</Link>
-        <Link to='/produtos' className='hover:text-lime-700 uppercase'>Produtos</Link>
-        <Link to='/categorias' className='hover:text-lime-700 uppercase'>Categorias</Link>
+        <Link to='/home' className='hover:text-lime-900 uppercase'>Home</Link>
+        <Link to='/sobreNos' className='hover:text-lime-900 uppercase'>Sobre Nós</Link>
+        <Link to='/produtos' className='hover:text-lime-900 uppercase'>Produtos</Link>
+        <Link to='/categorias' className='hover:text-lime-900 uppercase'>Categorias</Link>
         {usuario.tipo === "1" ?
           <>
-            <Link to='/cadastroCategoria' className='hover:text-lime-700 uppercase'>Cadastrar Categoria</Link>
-            <Link to='/cadastroProduto' className='hover:text-lime-700 uppercase'>Cadastrar Produto</Link>
+            <Link to='/cadastroCategoria' className='hover:text-lime-900 uppercase'>Cadastrar Categoria</Link>
+            <Link to='/cadastroProduto' className='hover:text-lime-900 uppercase'>Cadastrar Produto</Link>
           </>
         : <div></div>
         }

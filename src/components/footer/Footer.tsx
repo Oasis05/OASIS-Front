@@ -11,7 +11,7 @@ function Footer() {
 
   return (
     <>
-      <div className="flex justify-center bg-gradient-to-br from-teal-50 to-lime-100 text-yellow-950">
+      <div className="flex justify-center text-lime-950" style={{ backgroundColor: 'rgba(33, 59, 28, 0.71)'}}>
         <div className="container flex flex-col items-center py-4">
           <p className='text-xl font-bold'>Oasis | Copyright: </p>
           <p className='text-lg'>Acesse nossas redes sociais</p>
