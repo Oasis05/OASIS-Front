@@ -216,7 +216,7 @@ function FormularioProduto() {
           </select>
         </div>
         <button disabled={carregandoCategoria} type='submit' className='mt-4 bg-lime-800 py-2 px-4 text-white rounded-md hover:bg-lime-700 focus:outline-none'>
-          {carregandoCategoria ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
+          Editar
         </button>
       </form>
     </div>
