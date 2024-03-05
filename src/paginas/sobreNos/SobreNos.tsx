@@ -9,10 +9,10 @@ import sn5 from '../../assets/sn5.jpg';
 function SobreNos() {
     return (
       <div className="container max-w-screen-lg mx-auto px-4">
-        <h1 className="text-xl font-bold my-6 uppercase text-yellow-950">Sobre Nós</h1>
   
         {/* Seção 1 */}
-        <section className="flex flex-col md:flex-row items-center my-8">
+        <h1 className="text-xl font-bold mt-8 uppercase text-yellow-950">Sobre Nós</h1>
+        <section className="flex flex-col md:flex-row items-center mt-8">
           <div className="md:w-1/2">
             <p>Bem-vindo ao Oasis, onde cada compra alimenta uma missão dupla: nutrir corpos e almas, e semear um futuro mais sustentável e justo para todos.
                 Nascemos da crença profunda de que a alimentação não é apenas um direito básico, mas o alicerce de uma comunidade saudável.
@@ -24,6 +24,7 @@ function SobreNos() {
         </section>
   
         {/* Seção 2  */}
+        <h3 className="text-xl font-bold my-6 uppercase text-yellow-950 flex flex-row-reverse">Nossa Missão</h3>
         <section className="flex flex-col md:flex-row items-center my-8">
           <div className="md:w-1/2 flex justify-center order-2 md:order-1">
           <img src={sn1} alt="Descrição da imagem 5" className="max-w-xs md:max-w-md" style={{ width: '70%' }}/>           </div>
@@ -35,6 +36,7 @@ function SobreNos() {
         </section>
   
         {/* Seção 3  */}
+        <h3 className="text-xl font-bold my-6 uppercase text-yellow-950">Por Que Agricultura Familiar?</h3>
         <section className="flex flex-col md:flex-row items-center my-8">
           <div className="md:w-1/2">
             <p>A agricultura familiar é o coração pulsante do nosso negócio. Escolhemos trabalhar com pequenos produtores porque sabemos que,
@@ -47,6 +49,7 @@ function SobreNos() {
         </section>
   
         {/* Seção 4 */}
+        <h3 className="text-xl font-bold my-6 uppercase text-yellow-950 flex flex-row-reverse">Contribuindo para o Objetivo de Desenvolvimento Sustentável da ONU</h3>
         <section className="flex flex-col md:flex-row items-center my-8">
           <div className="md:w-1/2 flex justify-center order-2 md:order-1">
           <img src={sn5} alt="Descrição da imagem 5" className="max-w-xs md:max-w-md" style={{ width: '70%' }}/>           </div>
@@ -58,6 +61,7 @@ function SobreNos() {
         </section>
   
         {/* Seção 5  */}
+        <h3 className="text-xl font-bold my-6 uppercase text-yellow-950">Junte-se a Nós</h3>
         <section className="flex flex-col md:flex-row items-center my-8">
           <div className="md:w-1/2">
             <p>Cada compra feita no Oasis é um passo em direção a um mundo onde ninguém vai dormir com fome, onde os produtores são valorizados e onde a sustentabilidade

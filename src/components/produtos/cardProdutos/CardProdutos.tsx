@@ -21,12 +21,12 @@ function CardProduto({ prod }: CardProdutoProps) {
       <div
         className='absolute inset-0 bg-cover bg-center z-0'
         style={{
-          backgroundImage: `url('https://imgur.com/xkHuWO0.jpg')`, 
+          backgroundImage: `url('https://i.imgur.com/qisVhXC.jpg')`, 
           opacity: 0.2, 
         }}
       ></div>
       <div className='p-1 bg-lime-900'></div>
-      <div className='p-6 relative z-10'>
+      <div className='p-6 relative z-10  flex flex-col justify-center items-center'>
         <h2 className='text-lg font-bold text-gray-800 mb-3'>{prod.nome}</h2>
         <p className='text-sm text-gray-600 mb-3'>Tipo: {prod.categoria?.tipo}</p>
         <p className='text-lg font-bold text-gray-800 mb-3'>Preço: {prod.preco}</p>

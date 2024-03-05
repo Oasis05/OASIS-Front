@@ -126,9 +126,9 @@ function Navbar() {
 
       <div className="p-4 grid gap-7 grid-flow-col items-center font-bold text-[13.5px]">
         <Link to='/home' className='hover:text-lime-700 uppercase'>Home</Link>
+        <Link to='/sobreNos' className='hover:text-lime-700 uppercase'>Sobre Nós</Link>
         <Link to='/produtos' className='hover:text-lime-700 uppercase'>Produtos</Link>
         <Link to='/categorias' className='hover:text-lime-700 uppercase'>Categorias</Link>
-        <Link to='/sobreNos' className='hover:text-lime-700 uppercase'>Sobre Nós</Link>
         {usuario.tipo === "1" ?
           <>
             <Link to='/cadastroCategoria' className='hover:text-lime-700 uppercase'>Cadastrar Categoria</Link>
