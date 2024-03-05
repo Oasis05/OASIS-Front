@@ -51,7 +51,7 @@ function Navbar() {
           <Menu.Item>
             <Link
               to="/perfil"
-              className="flex px-4 py-2 text-sm  bg-zinc-100 text-darkMossGreen hover:bg-lime-200
+              className="flex px-4 py-2 text-sm bg-zinc-100 text-darkMossGreen hover:bg-lime-200
 													rounded-md transition duration-300 ease-in-out"
             >
               <UserSquare
@@ -85,7 +85,7 @@ function Navbar() {
           <Menu.Item>
             <Link
               to="/login"
-              className="flex px-4 py-2 text-sm bg-lime-100  text-darkMossGreen hover:bg-lime-200
+              className="flex px-4 py-2 text-sm bg-zinc-100  text-darkMossGreen hover:bg-green-100
 													rounded-md transition duration-300 ease-in-out"
             >
               <SignIn
@@ -116,7 +116,7 @@ function Navbar() {
           name="descricao"
           value={termoPesquisa}
           onChange={(e) => setTermoPesquisa(e.target.value)}
-          className="w-[16vw] h-[10px] border-none rounded-full p-2 self-center input-pesquisa bg-transparent text-white"
+          className="w-[16vw] h-[10px] border-none rounded-full p-3 self-center input-pesquisa bg-transparent text-black"
         />
         <button
           onClick={handlePesquisa}
