@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import SearchIcon from "../../assets/icons/SearchIcon.svg";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/logo.svg";
@@ -7,14 +7,12 @@ import User from "../../assets/icons/usericon.svg";
 import { CaretDown, SignIn, SignOut, UserSquare } from "@phosphor-icons/react";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useContext } from "react";
-import { buscar } from "../../services/Service";
-import Categoria from "../../models/Categoria";
 import { toastAlerta } from "../../utils/toastAlerta";
 
 function Navbar() {
   const navigate = useNavigate();
-
   const { usuario, handleLogout } = useContext(AuthContext);
+  const [termoPesquisa, setTermoPesquisa] = useState("");
 
   function logout() {
     handleLogout();
@@ -22,23 +20,9 @@ function Navbar() {
     navigate("/login");
   }
 
-  const [categorias, setCategorias] = useState<Categoria[]>([]);
-
-  async function buscarCategorias() {
-    await buscar("/categorias/all", setCategorias, {
-      headers: {},
-    });
-  }
-
-  useEffect(() => {
-    buscarCategorias();
-  }, [categorias.length]);
-
-  const [termoPesquisa, setTermoPesquisa] = useState("");
-
   const handlePesquisa = () => {
     if (termoPesquisa) {
-      navigate(`/produtos/nomes/${termoPesquisa}`);
+      navigate(`/produto/nomes/${termoPesquisa}`);
     }
   };
 
@@ -101,10 +85,7 @@ function Navbar() {
   }
 
   return (
-    <header
-      className=" text-lime-950 w-full text-green flex justify-between items-center py-[0.3rem] px-[4rem]"
-      style={{ backgroundColor: "rgba(178, 205, 172, 0.71)" }}
-    >
+    <header className="bg-gradient-to-br from-teal-50 to-lime-100 text-lime-950 w-full text-green flex justify-between items-center py-[0.3rem] px-[4rem]">
       <Link to="/home">
         <img src={Logo} className="xl:w-15 sm:w-14" alt="Logo" />
       </Link>
@@ -181,89 +162,88 @@ function Navbar() {
             </Menu.Items>
           </Transition>
         </Menu>
-
         <Menu as="div" className="relative inline-block">
-          <div className="flex group">
-            <Menu.Button className="transition duration-300 ease-in-out group-hover:text-sunglow inline-flex w-full uppercase">
-              Categorias
-              <CaretDown
-                size={10}
-                className="ms-1 self-center text-darkMossGreen flex transition duration-300 ease-in-out group-hover:text-sunglow"
-                weight="bold"
-                aria-hidden="true"
-              />
-            </Menu.Button>
-          </div>
+  <div className="flex group">
+    <Menu.Button className="transition duration-300 ease-in-out group-hover:text-sunglow inline-flex w-full uppercase">
+      Categorias
+      <CaretDown
+        size={10}
+        className="ms-1 self-center text-darkMossGreen flex transition duration-300 ease-in-out group-hover:text-sunglow"
+        weight="bold"
+        aria-hidden="true"
+      />
+    </Menu.Button>
+  </div>
 
-          <Transition
-            as={Fragment}
-            enter="transition ease-out duration-100"
-            enterFrom="transform opacity-0 scale-95"
-            enterTo="transform opacity-100 scale-100"
-            leave="transition ease-in duration-75"
-            leaveFrom="transform opacity-100 scale-100"
-            leaveTo="transform opacity-0 scale-95"
+  <Transition
+    as={Fragment}
+    enter="transition ease-out duration-100"
+    enterFrom="transform opacity-0 scale-95"
+    enterTo="transform opacity-100 scale-100"
+    leave="transition ease-in duration-75"
+    leaveFrom="transform opacity-100 scale-100"
+    leaveTo="transform opacity-0 scale-95"
+  >
+    <Menu.Items className="absolute inset-x-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-seasalt shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none bg-neutral-50">
+      <div className="px-1 py-1">
+        <Menu.Item>
+          <Link
+            to={`/categorias`}
+            className="block px-4 py-2 text-[12px] bg-seasalt text-darkMossGreen hover:bg-lime-200 rounded-md transition duration-200 ease-in-out"
           >
-            <Menu.Items className="absolute inset-x-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-seasalt shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none bg-neutral-50">
-              <div className="px-1 py-1">
-                <Menu.Item>
-                  <Link
-                    to={`/categorias`}
-                    className="block px-4 py-2 text-[12px] bg-seasalt text-darkMossGreen hover:bg-lime-200 rounded-md transition duration-200 ease-in-out"
-                  >
-                    Todas as Categorias
-                  </Link>
-                </Menu.Item>
-                {usuario.tipo === "1" && (
-                  <Menu.Item>
-                    <Link
-                      to={`/cadastroCategoria`}
-                      className="block px-4 py-2 text-[12px] bg-seasalt text-darkMossGreen hover:bg-lime-200 rounded-md transition duration-200 ease-in-out"
-                    >
-                      Cadastrar Categoria
-                    </Link>
-                  </Menu.Item>
-                )}
-              </div>
-            </Menu.Items>
-          </Transition>
-        </Menu>
-
-        <div className="gap-3 justify-around flex items-center p-3">
-          <div className="flex rounded-[12rem] items-center border border-emerald p-[5px] bg-lime-50">
-            <Menu as="div" className="relative inline-block text-darkMossGreen">
-              <div className="flex group">
-                <Menu.Button className="transition duration-300 ease-in-out group-hover:text-sunglow inline-flex w-full">
-                  <img src={User} className="w-7" alt="User Icon"></img>
-                  <p className="flex headerBtn ps-2 pe-2 items-center self-center">
-                    Perfil
-                  </p>
-                  <CaretDown
-                    size={10}
-                    className="me-2 self-center text-darkMossGreen text-[12px] transition duration-300 ease-in-out group-hover:text-sunglow"
-                    weight="bold"
-                    aria-hidden="true"
-                  />
-                </Menu.Button>
-              </div>
-
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                {userDropDown}
-              </Transition>
-            </Menu>
-          </div>
-        </div>
+            Todas as Categorias
+          </Link>
+        </Menu.Item>
+        {usuario.tipo === "1" && (
+          <Menu.Item>
+            <Link
+              to={`/cadastroCategoria`}
+              className="block px-4 py-2 text-[12px] bg-seasalt text-darkMossGreen hover:bg-lime-200 rounded-md transition duration-200 ease-in-out"
+            >
+              Cadastrar Categoria
+            </Link>
+          </Menu.Item>
+        )}
       </div>
-    </header>
-  );
+    </Menu.Items>
+  </Transition>
+</Menu>
+
+<div className="gap-3 justify-around flex items-center p-3">
+  <div className="flex rounded-[12rem] items-center border border-emerald p-[5px] bg-lime-50">
+    <Menu as="div" className="relative inline-block text-darkMossGreen">
+      <div className="flex group">
+        <Menu.Button className="transition duration-300 ease-in-out group-hover:text-sunglow inline-flex w-full">
+          <img src={User} className="w-7" alt="User Icon"></img>
+          <p className="flex headerBtn ps-2 pe-2 items-center self-center">
+            Perfil
+          </p>
+          <CaretDown
+            size={10}
+            className="me-2 self-center text-darkMossGreen text-[12px] transition duration-300 ease-in-out group-hover:text-sunglow"
+            weight="bold"
+            aria-hidden="true"
+          />
+        </Menu.Button>
+      </div>
+
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95"
+      >
+        {userDropDown}
+      </Transition>
+    </Menu>
+  </div>
+</div>
+</div>
+</header>
+);
 }
 
 export default Navbar;
