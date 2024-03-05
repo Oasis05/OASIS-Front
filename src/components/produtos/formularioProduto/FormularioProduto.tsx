@@ -83,12 +83,11 @@ function FormularioProduto() {
     });
   }, [categoria]);
 
-  function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+  function atualizarEstado(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
+    const { name, value } = e.target;
     setProduto({
       ...produto,
-      [e.target.name]: e.target.value,
-      categoria: categoria,
-      usuario: usuario,
+      [name]: value,
     });
   }
 
