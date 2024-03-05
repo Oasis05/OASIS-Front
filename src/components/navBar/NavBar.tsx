@@ -35,7 +35,7 @@ function Navbar() {
           <Menu.Item>
             <Link
               to="/perfil"
-              className="flex px-4 py-2 text-sm bg-zinc-100 text-darkMossGreen hover:bg-lime-200
+              className="flex px-4 py-2 text-sm bg-zinc-100 text-darkMossGreen hover:bg-green-100
 													rounded-md transition duration-300 ease-in-out"
             >
               <UserSquare
@@ -49,7 +49,7 @@ function Navbar() {
             <Link
               to="/login"
               onClick={logout}
-              className="flex px-4 py-2 text-sm  bg-zinc-100 text-darkMossGreen hover:bg-lime-200
+              className="flex px-4 py-2 text-sm  bg-zinc-100 text-darkMossGreen hover:bg-green-100
 													rounded-md transition duration-300 ease-in-out"
             >
               <SignOut
