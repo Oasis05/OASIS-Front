@@ -93,7 +93,7 @@ function FormularioProduto() {
   }
 
   function retornar() {
-    navigate('/categorias');
+    navigate('/produtos');
   }
 
   async function gerarNovoProduto(e: ChangeEvent<HTMLFormElement>) {
