@@ -47,12 +47,12 @@ function Navbar() {
 
   if (usuario.token !== "") {
     userDropDown = (
-      <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-seasalt shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+      <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-zinc-100 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
         <div className="px-1 py-1">
           <Menu.Item>
             <Link
               to="/perfil"
-              className="flex px-4 py-2 text-sm  bg-seasalt text-darkMossGreen hover:bg-sunglow-light
+              className="flex px-4 py-2 text-sm  bg-zinc-100 text-darkMossGreen hover:bg-lime-200
 													rounded-md transition duration-300 ease-in-out"
             >
               <UserSquare
@@ -66,7 +66,7 @@ function Navbar() {
             <Link
               to="/login"
               onClick={logout}
-              className="flex px-4 py-2 text-sm  bg-seasalt text-darkMossGreen hover:bg-sunglow-light
+              className="flex px-4 py-2 text-sm  bg-zinc-100 text-darkMossGreen hover:bg-lime-200
 													rounded-md transition duration-300 ease-in-out"
             >
               <SignOut
@@ -81,17 +81,17 @@ function Navbar() {
     );
   } else {
     userDropDown = (
-      <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-seasalt shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+      <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-zinc-100 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
         <div className="px-1 py-1">
           <Menu.Item>
             <Link
               to="/login"
-              className="flex px-4 py-2 text-sm  bg-seasalt text-darkMossGreen hover:bg-sunglow-light
+              className="flex px-4 py-2 text-sm bg-lime-100  text-darkMossGreen hover:bg-lime-200
 													rounded-md transition duration-300 ease-in-out"
             >
               <SignIn
                 size={16}
-                className="-mr-1 self-center text-gray-400 flex"
+                className="-mr-1 self-center text-gray-500 flex"
               />
               <p className="px-2">Entrar</p>
             </Link>
@@ -138,7 +138,7 @@ function Navbar() {
         }
 
         <div className="gap-3 justify-around flex items-center p-3">
-          <div className="flex rounded-[12rem] items-center border border-emerald p-[5px]">
+          <div className="flex rounded-[12rem] items-center border border-emerald p-[5px] bg-zinc-100">
             <Menu
               as="div"
               className="relative inline-block text-darkMossGreen"
@@ -146,7 +146,7 @@ function Navbar() {
               <div className="flex group">
                 <Menu.Button className="transition duration-300 ease-in-out group-hover:text-sunglow inline-flex w-full">
                   <img src={User} className="w-7" alt="User Icon"></img>
-                  <p className="flex headerBtn ps-2 pe-1 items-center self-center">
+                  <p className="flex headerBtn ps-2 pe-2 items-center self-center">
                     Perfil
                   </p>
                   <CaretDown

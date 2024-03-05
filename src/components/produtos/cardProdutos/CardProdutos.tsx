@@ -28,15 +28,15 @@ function CardProduto({ prod }: CardProdutoProps) {
       <div className='p-1 bg-lime-900'></div>
       <div className='p-6 relative z-10  flex flex-col justify-center items-center'>
         <h2 className='text-lg font-bold text-gray-800 mb-3'>{prod.nome}</h2>
-        <p className='text-sm text-gray-600 mb-3'>Tipo: {prod.categoria?.tipo}</p>
-        <p className='text-lg font-bold text-gray-800 mb-3'>Preço: {prod.preco}</p>
+        <p className='text-sm text-gray-600 mb-3'>Categoria: {prod.categoria?.tipo}</p>
+        <p className='text-lg font-bold text-gray-800 mb-3'>R$: {prod.preco}</p>
         <img src={prod.foto} alt={prod.nome} className="w-32 h-auto mb-3" />
         <ul className='text-sm text-gray-600 mb-3'>
           <li className='mb-1 flex items-center'>
             Quantidade: {prod.quantidade}
           </li>
           <li className='flex items-center'>
-            {new Intl.DateTimeFormat(undefined, {
+            Validade: {new Intl.DateTimeFormat(undefined, {       
               dateStyle: 'long',
             }).format(new Date(prod.dataValidade))}
           </li>
