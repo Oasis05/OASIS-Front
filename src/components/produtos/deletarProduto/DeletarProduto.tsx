@@ -67,26 +67,21 @@ function DeletarProduto() {
     retornar()
   }
   return (
-    <div className='container w-1/3 mx-auto'>
-      <h1 className='text-4xl text-center my-4'>Deletar produto</h1>
+    <div className="bg-white h-screen flex flex-col items-center justify-center text-center">
+      <h1 className="text-4xl font-bold text-black">Deletar Produto</h1>
 
-      <p className='text-center font-semibold mb-4'>Você tem certeza de que deseja apagar o produto a seguir?</p>
+      <p className="text-center font-semibold mb-4">Você tem certeza de que deseja apagar esse produto?</p>
 
-      <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-        <header className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>Produto</header>
-        <div className="p-4">
-          <p className='text-xl h-full'>{produto.nome}</p>
-          <p>{produto.preco}</p>
-        </div>
-        <div className="flex">
-          <button className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2' onClick={retornar}>Não</button>
-          <button className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-600 flex items-center justify-center' onClick={deletarProduto}>
-            Sim
-          </button>
-        </div>
+      <div className="flex">
+        <button className="text-white bg-red-600 hover:bg-red-700 w-full py-2 px-4 mr-2 rounded-md focus:outline-none" onClick={retornar}>
+          Não
+        </button>
+        <button className="text-white bg-lime-900 hover:bg-lime-700 w-full py-2 px-4 rounded-md focus:outline-none" onClick={deletarProduto}>
+          Sim
+        </button>
       </div>
     </div>
-  )
+  );
 }
 
-export default DeletarProduto
+export default DeletarProduto;

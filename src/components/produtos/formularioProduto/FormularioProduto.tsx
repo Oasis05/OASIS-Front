@@ -142,12 +142,12 @@ function FormularioProduto() {
   const carregandoCategoria = categoria.tipo === '';
 
   return (
-    <div className="container flex flex-col mx-auto items-center">
-      <h1 className="text-4xl text-center my-8">{id !== undefined ? 'Editar Produto' : 'Cadastrar Produto'}</h1>
+    <div className="bg-white h-screen flex flex-col items-center justify-center text-start">
+      <h1 className="text-4xl font-bold text-black">{id !== undefined ? 'Editar Produto' : 'Cadastrar Produto'}</h1>
 
-      <form onSubmit={gerarNovoProduto} className="flex flex-col w-1/2 gap-4">
+      <form onSubmit={gerarNovoProduto} className="mt-8 flex flex-col w-1/2 gap-4">
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Nome do produto</label>
+          <label htmlFor="titulo" className="text-black">Nome do produto</label>
           <input
             value={produto.nome}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -155,11 +155,11 @@ function FormularioProduto() {
             placeholder="Nome"
             name="nome"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="py-2 px-4 bg-lime-50 text-black rounded-md focus:outline-none"
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Valor do Produto</label>
+          <label htmlFor="titulo" className="text-black">Valor do Produto</label>
           <input
             value={produto.preco}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -167,11 +167,11 @@ function FormularioProduto() {
             placeholder="Valor"
             name="preco"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="py-2 px-4 bg-lime-50 text-black rounded-md focus:outline-none"
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Data de validade</label>
+          <label htmlFor="titulo" className="text-black">Data de validade</label>
           <input
             value={produto.dataValidade}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -179,11 +179,11 @@ function FormularioProduto() {
             placeholder="Data de Validade"
             name="dataValidade"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="py-2 px-4 bg-lime-50 text-black rounded-md focus:outline-none"
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Estoque do produto</label>
+          <label htmlFor="titulo" className="text-black">Estoque do produto</label>
           <input
             value={produto.quantidade}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -191,11 +191,11 @@ function FormularioProduto() {
             placeholder="Estoque"
             name="quantidade"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="py-2 px-4 bg-lime-50 text-black rounded-md focus:outline-none"
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Foto do produto</label>
+          <label htmlFor="titulo" className="text-black">Foto do produto</label>
           <input
             value={produto.foto}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -203,21 +203,19 @@ function FormularioProduto() {
             placeholder="Foto"
             name="foto"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="py-2 px-4 bg-lime-50 text-black rounded-md focus:outline-none"
           />
         </div>
         <div className="flex flex-col gap-2">
-          <p>Categoria do produto</p>
-          <select name="categoria" id="categoria" className='border p-2 border-slate-800 rounded' onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
-            <option value="" selected disabled>Selecione uma categoria</option>
+          <p className="text-black">Categoria do produto</p>
+          <select name="categoria" id="categoria" className='py-2 px-4 bg-lime-50 text-black rounded-md focus:outline-none' onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
+            <option value="" disabled>Selecione uma categoria</option>
             {categorias.map((categoria) => (
-              <>
-                <option value={categoria.id} >{categoria.tipo}</option>
-              </>
+              <option key={categoria.id} value={categoria.id}>{categoria.tipo}</option>
             ))}
           </select>
         </div>
-        <button disabled={carregandoCategoria} type='submit' className='rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800 text-white font-bold w-1/2 mx-auto block py-2'>
+        <button disabled={carregandoCategoria} type='submit' className='mt-4 bg-lime-800 py-2 px-4 text-white rounded-md hover:bg-lime-700 focus:outline-none'>
           {carregandoCategoria ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
         </button>
       </form>

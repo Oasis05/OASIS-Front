@@ -21,7 +21,7 @@ function CardCategorias({ categoria }: CardCategoriaProps) {
       <div
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{ 
-          backgroundImage: `url('https://imgur.com/aNuccNU.jpg')`, 
+          backgroundImage: `url('https://imgur.com/zNx520P.jpg')`, 
           opacity: 0.5 // Opacidade ajustada para 50%
         }} 
       ></div>
@@ -34,7 +34,7 @@ function CardCategorias({ categoria }: CardCategoriaProps) {
             <li>
               <Link
                 to={`/editarCategoria/${categoria.id}`}
-                className="text-gray-800 hover:text-gray-600 block py-2"
+                className="text-lime-950 hover:text-lime-700 block py-2"
               >
                 Editar
               </Link>
