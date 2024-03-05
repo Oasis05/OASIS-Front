@@ -1,6 +1,6 @@
 import './Home.css';
 import ListaProdutos from "../../components/produtos/listaProdutos/ListaProdutos";
-import ModalProdutos from "../../components/produtos/modalProdutos/ModalProdutos";
+import { Link } from 'react-router-dom';
 
 
 function Home() { 
@@ -14,12 +14,12 @@ function Home() {
 
             <div className="flex justify-around gap-4">
               <div className="flex space-x-4">
-                <button className="rounded bg-lime-800 bg-opacity-50 text-white py-2 px-4 shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-lime-700">
+              <Link to='/produtos'><button className="rounded bg-lime-800 bg-opacity-50 text-white py-2 px-4 shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-lime-700">
                   Produtos
-                </button>
-                <button className="rounded bg-lime-800 bg-opacity-50 text-white py-2 px-4 shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-lime-700">
+                </button></Link>
+                <Link to='/categorias'><button className="rounded bg-lime-800 bg-opacity-50 text-white py-2 px-4 shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-lime-700">
                   Categorias
-                </button>
+                </button></Link>
               </div>
             </div>
           </div>

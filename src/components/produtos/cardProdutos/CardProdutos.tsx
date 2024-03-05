@@ -37,8 +37,7 @@ function CardProduto({ prod }: CardProdutoProps) {
           </li>
           <li className='flex items-center'>
             {new Intl.DateTimeFormat(undefined, {
-              dateStyle: 'medium',
-              timeStyle: 'medium',
+              dateStyle: 'long',
             }).format(new Date(prod.dataValidade))}
           </li>
         </ul>
