@@ -81,7 +81,7 @@ function Navbar() {
     );
   } else {
     userDropDown = (
-      <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-seasalt shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+      <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-zinc-100 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
         <div className="px-1 py-1">
           <Menu.Item>
             <Link
