@@ -10,7 +10,7 @@ function Footer() {
 
   return (
     <>
-      <div className="text-lime-950" style={{ backgroundColor: 'rgba(33, 59, 28, 0.71)'}}>
+      <div className="text-lime-950" style={{ backgroundColor: 'rgba(178, 205, 172, 0.71)'}}>
         <div className="container flex justify-between items-center py-4 px-8">
           <Link to="/home" className="text-lime-950">
             <img src={Logo} className="w-14 sm:w-14 ml-40" alt="Logo" />
