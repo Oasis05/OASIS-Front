@@ -1,6 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable prefer-const */
 import { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import { AuthContext } from '../../../contexts/AuthContext'
@@ -76,7 +73,7 @@ function DeletarCategoria() {
         <button className="text-white bg-red-600 hover:bg-red-700 w-full py-2 px-4 mr-2 rounded-md focus:outline-none" onClick={retornar}>
           Não
         </button>
-        <button className="text-white bg-lime-900 hover:bg-lime-700 w-full py-2 px-4 rounded-md focus:outline-none" onClick={DeletarCategoria}>
+        <button className="text-white bg-lime-900 hover:bg-lime-700 w-full py-2 px-4 rounded-md focus:outline-none" onClick={deletarCategoria}>
           Sim
         </button>
       </div>

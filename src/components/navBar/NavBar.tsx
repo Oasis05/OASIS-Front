@@ -109,7 +109,7 @@ function Navbar() {
         <img src={Logo} className="xl:w-15 sm:w-14" alt="Logo" />
       </Link>
 
-      <div className="div-focus flex p-[5px] rounded-full self-center border border-emerald input-pesquisa items-center">
+      <div className="div-focus flex p-[5px] rounded-full self-center border border-emerald input-pesquisa items-center bg-lime-50">
         <input
           type="text"
           placeholder="Pesquisar"
