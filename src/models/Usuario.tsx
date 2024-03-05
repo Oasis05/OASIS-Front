@@ -6,5 +6,6 @@ export default interface Usuario {
   usuario: string;
   foto: string;
   senha: string;
+  tipo: string,
   Produto?: Produto | null;
 }

@@ -18,7 +18,7 @@ function Perfil() {
     return (
         <div className='container mx-auto mt-4 rounded-2xl overflow-hidden'>
             <img className='w-full h-72 object-cover border-b-8 border-white' src="https://i.imgur.com/x73G4P6.jpg" alt="Capa do Perfil" />
-            {usuario.foto === " " ? <img src="https://i.imgur.com/bbC0sF0.jpg" alt="Foto padrão"
+            {usuario.foto === "" ? <img src="https://i.imgur.com/bbC0sF0.jpg" alt="Foto padrão"
                 className='rounded-full w-56 mx-auto mt-[-8rem] border-8 border-white relative z-10' />
                 :
                 <img src={usuario.foto} alt={`Foto de perfil de ${usuario.nome}`} className='rounded-full w-56 mx-auto mt-[-8rem] border-8 border-white relative z-10' />

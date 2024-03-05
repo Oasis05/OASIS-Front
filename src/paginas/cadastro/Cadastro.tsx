@@ -1,6 +1,6 @@
 /* eslint-disable prefer-const */
 /* eslint-disable react-hooks/exhaustive-deps */
-import  { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Usuario from "../../models/Usuario";
 import { cadastrarUsuario } from "../../services/Service";
@@ -16,11 +16,13 @@ function Cadastro() {
 
   const [confirmaSenha, setConfirmaSenha] = useState<string>("");
 
+
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
     nome: "",
     usuario: "",
     senha: "",
+    tipo: "",
     foto: "",
   });
 
@@ -29,8 +31,39 @@ function Cadastro() {
     nome: "",
     usuario: "",
     senha: "",
+    tipo: "",
     foto: "",
   });
+
+
+  function handleTipoUsuario(e: ChangeEvent<HTMLSelectElement>) {
+    setUsuario({
+      ...usuario,
+      tipo: (e.target.value),
+    });
+    if (e.target.value === "1") {
+      const senhaVendedor = prompt("Por favor, insira a senha de vendedor:");
+
+      if (senhaVendedor === "oasis5") {
+      } else if (senhaVendedor === null) {
+        setUsuario({
+          ...usuario,
+          tipo: "2"
+        });
+      } else {
+        const tentarNovamente = confirm("Senha incorreta. Deseja tentar novamente?");
+        if (tentarNovamente) {
+          handleTipoUsuario(e); // Chamar a função novamente para solicitar a senha
+        } else {
+          setUsuario({
+            ...usuario,
+            tipo: "2"
+          });
+        }
+      }
+
+    }
+  }
 
   useEffect(() => {
     if (usuarioResposta.id !== 0) {
@@ -78,8 +111,8 @@ function Cadastro() {
         "Dados inconsistentes. Verifique as informações de cadastro.",
         "info"
       );
-      setUsuario({ ...usuario, senha: "" }); 
-      setConfirmaSenha(""); 
+      setUsuario({ ...usuario, senha: "" });
+      setConfirmaSenha("");
     }
   }
 
@@ -117,12 +150,13 @@ function Cadastro() {
                 <input
                   type="text"
                   name="usuario"
-                  placeholder="Usuário"
+                  placeholder="E-mail"
                   className="rounded-3xl border-none bg-lime-800 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
                   value={usuario.usuario}
                   onChange={atualizarEstado}
                 />
               </div>
+
               <div className="flex justify-center mb-4 text-lg">
                 <input
                   type="text"
@@ -153,6 +187,20 @@ function Cadastro() {
                   onChange={handleConfirmarSenha}
                 />
               </div>
+
+              <div className="flex justify-center mb-4 text-lg">
+                <select
+                  name="tipo"
+                  className="rounded-3xl border-none bg-lime-800 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+                  value={usuario.tipo}
+                  onChange={handleTipoUsuario}
+                >
+                  <option value={"0"}>Entrar como</option>
+                  <option value={"1"}>Vendedor</option>
+                  <option value={"2"}>Usuário</option>
+                </select>
+              </div>
+
               <div className="mt-8 flex justify-center text-lg text-black">
                 <button
                   type="submit"

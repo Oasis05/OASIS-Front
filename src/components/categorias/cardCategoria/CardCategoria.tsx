@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Categoria from "../../../models/Categoria";
+import { AuthContext } from "../../../contexts/AuthContext";
 
 interface CardCategoriaProps {
   categoria: Categoria;
@@ -12,13 +13,15 @@ function CardCategorias({ categoria }: CardCategoriaProps) {
   const toggleOptions = () => {
     setShowOptions(!showOptions);
   };
+  
+  const {usuario} = useContext(AuthContext);
 
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105 relative">
       <div
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{ 
-          backgroundImage: `url('https://imgur.com/aNuccNU.jpg')`, 
+          backgroundImage: `url('https://imgur.com/zNx520P.jpg')`, 
           opacity: 0.5 // Opacidade ajustada para 50%
         }} 
       ></div>
@@ -31,7 +34,7 @@ function CardCategorias({ categoria }: CardCategoriaProps) {
             <li>
               <Link
                 to={`/editarCategoria/${categoria.id}`}
-                className="text-gray-800 hover:text-gray-600 block py-2"
+                className="text-lime-950 hover:text-lime-700 block py-2"
               >
                 Editar
               </Link>
@@ -46,6 +49,8 @@ function CardCategorias({ categoria }: CardCategoriaProps) {
             </li>
           </ul>
         )}
+
+        {usuario.tipo === "1" ? 
         <button
           onClick={toggleOptions}
           className="absolute top-0 right-0 mt-2 mr-2 p-2 focus:outline-none z-10"
@@ -65,6 +70,9 @@ function CardCategorias({ categoria }: CardCategoriaProps) {
             />
           </svg>
         </button>
+        : 
+        <div></div>
+        }
       </div>
     </div>
   );

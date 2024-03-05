@@ -99,31 +99,31 @@ function FormularioCategoria() {
 
   return (
     <div className="container flex flex-col items-center justify-center mx-auto">
-      <h1 className="text-4xl text-center my-8">
+      <h1 className="text-4xl text-start my-8">
         {id === undefined ? 'Cadastre uma nova categoria' : 'Editar categoria'}
       </h1>
-
+  
       <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
         <div className="flex flex-col gap-2">
-          <label htmlFor="descricao">Descrição da categoria</label>
+          <label htmlFor="descricao" className="text-black">Descrição da categoria</label>
           <input
             type="text"
             placeholder="Tipo"
             name='tipo'
-            className="border-2 border-slate-700 rounded p-2"
+            className="py-2 px-4 bg-lime-50 text-black rounded-md focus:outline-none"
             value={categoria.tipo}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
         <button
-          className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto block"
+          className="mt-4 bg-lime-800 py-2 px-4 text-white rounded-md hover:bg-lime-700 focus:outline-none"
           type="submit"
         >
           {id === undefined ? 'Cadastrar' : 'Editar'}
         </button>
       </form>
     </div>
-  );
+  );  
 }
 
 export default FormularioCategoria;
