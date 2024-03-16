@@ -8,11 +8,45 @@ import { CaretDown, SignIn, SignOut, UserSquare } from "@phosphor-icons/react";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useContext } from "react";
 import { toastAlerta } from "../../utils/toastAlerta";
+import { buscar } from "../../services/Service";
 
 function Navbar() {
   const navigate = useNavigate();
   const { usuario, handleLogout } = useContext(AuthContext);
   const [termoPesquisa, setTermoPesquisa] = useState("");
+   const [resultadosPesquisa, setResultadosPesquisa] = useState<any[]>([]);
+
+    async function handlePesquisa() {
+      if (termoPesquisa.trim() !== "") {
+        try {
+          const response = await buscar(
+            `/produto/nomes/${termoPesquisa}`,
+            {""},
+            {
+              headers: {
+                Authorization: usuario.token,
+              },
+            }
+          );
+
+          setResultadosPesquisa(response.data);
+          
+        } catch (error) {
+          if (error.response && error.response.status === 403) {
+            toastAlerta("O token expirou, favor logar novamente", "info");
+            handleLogout();
+            navigate("/login");
+          } else {
+            console.error("Erro ao buscar produtos:", error);
+            toastAlerta(
+              "Erro ao buscar produtos, tente novamente mais tarde",
+              "erro"
+            );
+          }
+        }
+      }
+    }
+
 
   function logout() {
     handleLogout();
@@ -20,13 +54,7 @@ function Navbar() {
     navigate("/login");
   }
 
-  const handlePesquisa = () => {
-    if (termoPesquisa) {
-      navigate(`/produto/nomes/${termoPesquisa}`);
-    }
-  };
-
-  let userDropDown;
+   let userDropDown;
 
   if (usuario.token !== "") {
     userDropDown = (
@@ -245,5 +273,5 @@ function Navbar() {
 </header>
 );
 }
-
+    
 export default Navbar;
