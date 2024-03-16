@@ -19,6 +19,7 @@ import FormularioProduto from "./components/produtos/formularioProduto/Formulari
 import DeletarProduto from "./components/produtos/deletarProduto/DeletarProduto";
 import { ToastContainer } from "react-toastify";
 import Perfil from "./paginas/perfil/Perfil";
+import Contatos from "./paginas/contatos/contatos";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               <Route path="/sobrenos" element={<SobreNos />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/categorias" element={<ListaCategoria />} />
+
               <Route
                 path="/cadastroCategoria"
                 element={<FormularioCategoria />}
@@ -55,6 +57,7 @@ function App() {
                 element={<FormularioProduto />}
               />
               <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
+              <Route path="/contatos" element={<Contatos />} />
 
               <Route path="/perfil" element={<Perfil />} />
             </Routes>
