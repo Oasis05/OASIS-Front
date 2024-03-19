@@ -1,0 +1,10 @@
+.estiloDoFundo {
+  background-image: url('https://imgur.com/aNuccNU.jpg');
+  background-size: 100%;
+  min-height: auto;
+  max-height: auto;
+  display: flex;
+  max-width: 100%;
+  opacity: 0.9;
+  background-repeat: no-repeat;
+};
