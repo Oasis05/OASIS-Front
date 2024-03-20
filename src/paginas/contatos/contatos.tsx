@@ -3,6 +3,7 @@ import Guilherme from "../../assets/Guilherme.jpg";
 import Flavia from "../../assets/Flavia.png"
 import Anderson from "../../assets/Anderson.png"
 import Isabella from "../../assets/Isabella.jpg"
+import Sasso from "../../assets/Sasso.jpg"
 import Perfil from "../../assets/Perfil.jpg";
 import GitHub from "../../assets/icons/github.svg";
 import Linkedin from "../../assets/icons/linkedIn.svg";
@@ -283,20 +284,20 @@ function Contatos() {
         {/* PARTICIPANTE 2 */}
         <div className="w-full md:w-1/3 p-4">
           <h5 className="text-sm font-bold my-6 uppercase text-yellow-950 flex flex-row">
-            Fulano Sicrano
+            Fernanda Sasso
           </h5>
           <img
-            src={Perfil}
+            src={Sasso}
             alt="Foto-Perfil"
             className="max-w-xs md:max-w-md rounded-full"
             style={{ width: "40%" }}
           />
           <section className="mt-8">
             <p>
-              <span className="font-bold">Idade:</span> X anos
+              <span className="font-bold">Idade:</span> 31 anos
             </p>
             <p>
-              <span className="font-bold">Formação:</span> lorem ipsulum
+              <span className="font-bold">Formação:</span> Designer e Estudante de Desenvolvimento Web
             </p>
             <p>
               <span className="font-bold">Tecnologias:</span>
@@ -305,7 +306,7 @@ function Contatos() {
                 <li>Javascript/Typescript</li>
                 <li>React</li>
                 <li>Node.js</li>
-                <li>Nest.js</li>
+                <li>Git</li>
                 <li>Metodologias Ágeis</li>
               </ul>
             </p>
@@ -313,14 +314,14 @@ function Contatos() {
               <div className="flex gap-3 items-center">
                 <span className="font-bold">Redes sociais:</span>
                 <a
-                  href="https://github.com/Perfilgcsilva"
+                  href="https://github.com/nanasasso"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img src={GitHub} className="w-9 h-9" alt="GitHub" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/Perfil-goncalves/"
+                  href="https://www.linkedin.com/in/fernandasasso"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

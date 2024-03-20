@@ -21,7 +21,7 @@ function SobreNos() {
 
       {/* Seção do contador */}
       <div className="text-center mt-5">
-        <div className="mx-auto p-5 bg-zinc-100 rounded-lg shadow-md max-w-sm">
+        <div className="mx-auto p-5 bg-gradient-to-br from-teal-50 to-lime-100 rounded-lg shadow-md max-w-sm">
           <h1 className="text-xl font-semibold">Sua contribuição faz a diferença!</h1>
           <p className="text-lg">Quilos de alimentos doados:</p>
           <div className="text-white bg-white bg-opacity-25 rounded-full mt-3 inline-block px-5 py-2">
