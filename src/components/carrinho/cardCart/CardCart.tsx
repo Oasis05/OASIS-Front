@@ -29,7 +29,7 @@ function CardCart({ item }: CardProdutosProps) {
             opacity: 0.2,
           }}
         ></div>
-        <div className="p-1 bg-lime-200"></div>
+        <div className="p-1 bg-lime-700"></div>
         <div className="p-6 relative z-10  flex flex-col justify-center items-center">
           <h2 className="text-lg font-bold text-gray-800 mb-3">{item.nome}</h2>
           <p className="text-sm text-gray-600 mb-3">
@@ -61,20 +61,26 @@ function CardCart({ item }: CardProdutosProps) {
             </button>
           </div>
         </div>
-        {showOptions && (
-          
-            <select aria-label="Select quantity" className="text-sm  mb-3 absolute top-0 right-0 mt-8 bg-white rounded-lg p-2 py-2 px-1 border border-gray-200 mr-6 focus:outline-none dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white">
-                <option>01</option>
-                <option>02</option>
-                <option>03</option>
-                <option>04</option>
-                <option>05</option>
-                <option>06</option>
-                <option>07</option>
-                <option>08</option>
-                <option>09</option>
-              </select>
-        )}
+        
+        <div>
+      <button onClick={toggleOptions}>Qauntidade</button>
+      {showOptions && (
+        <select
+          aria-label="Select quantity"
+          className="text-sm mb-3 absolute top-0 right-0 mt-8 bg-white rounded-lg p-2 py-2 px-1 border border-gray-200 mr-6 focus:outline-none dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+        >
+          <option>01</option>
+          <option>02</option>
+          <option>03</option>
+          <option>04</option>
+          <option>05</option>
+          <option>06</option>
+          <option>07</option>
+          <option>08</option>
+          <option>09</option>
+        </select>
+      )}
+    </div>
 
         {usuario.tipo === "1" ? (
           <button
