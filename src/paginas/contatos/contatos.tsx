@@ -228,10 +228,10 @@ function Contatos() {
           </section>
         </div>
 
-        {/* PARTICIPANTE 2 */}
+        {/* PARTICIPANTE 5 */}
         <div className="w-full md:w-1/3 p-4">
           <h5 className="text-sm font-bold my-6 uppercase text-yellow-950 flex flex-row">
-            Fulano Sicrano
+            Isabella Albuquerque
           </h5>
           <img
             src={Perfil}
@@ -241,10 +241,10 @@ function Contatos() {
           />
           <section className="mt-8">
             <p>
-              <span className="font-bold">Idade:</span> X anos
+              <span className="font-bold">Idade:</span> 26 anos
             </p>
             <p>
-              <span className="font-bold">Formação:</span> lorem ipsulum
+              <span className="font-bold">Formação:</span> Nutrição e cursando Análise e Desenvolvimento de Sistemas na FATEC
             </p>
             <p>
               <span className="font-bold">Tecnologias:</span>
@@ -252,8 +252,8 @@ function Contatos() {
                 <li>Java</li>
                 <li>Javascript/Typescript</li>
                 <li>React</li>
-                <li>Node.js</li>
-                <li>Nest.js</li>
+                <li>Git/Github</li>
+                <li>SQL</li>
                 <li>Metodologias Ágeis</li>
               </ul>
             </p>
@@ -261,14 +261,14 @@ function Contatos() {
               <div className="flex gap-3 items-center">
                 <span className="font-bold">Redes sociais:</span>
                 <a
-                  href="https://github.com/Perfilgcsilva"
+                  href="https://github.com/Isabella-Albuquerque"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img src={GitHub} className="w-9 h-9" alt="GitHub" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/Perfil-goncalves/"
+                  href="https://www.linkedin.com/in/isabella-albuquerqueque-/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
