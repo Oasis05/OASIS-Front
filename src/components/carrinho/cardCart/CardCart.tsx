@@ -19,7 +19,7 @@ function CardCart({ item }: CardProdutosProps) {
             backgroundImage: `url('https://i.imgur.com/qisVhXC.jpg')`,
             opacity: 0.2,
           }}
-        ></div>
+        >
                         <div className='p-1 bg-lime-900'></div>
                         <div className='p-6 relative z-10  flex flex-col justify-center items-center'>
                             <img src={item.foto} alt={item.nome} className="w-32 h-auto mb-3" />
@@ -58,7 +58,6 @@ function CardCart({ item }: CardProdutosProps) {
                     </div>
                 </div>
             </div>
-        </div>
     );
 }
 
