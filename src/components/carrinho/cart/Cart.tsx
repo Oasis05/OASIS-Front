@@ -17,8 +17,7 @@ function Cart() {
                 flex-col
                 justify-center
                 mt-4
-                mb-4
-                w-full md:w-1/3 p-4"
+                mb-4"
                 >
 
             <h1 className="text-xl font-bold mt-8 my-4 uppercase text-lime-950 text-center">
