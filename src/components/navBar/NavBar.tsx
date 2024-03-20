@@ -47,7 +47,9 @@ function Navbar() {
                 size={16}
                 className="-mr-1 self-center text-gray-400 flex"
               />
-              <p className="px-2" onClick={handleMenuClick}>Meu Perfil</p>
+              <p className="px-2" onClick={handleMenuClick}>
+                Meu Perfil
+              </p>
             </Link>
           </Menu.Item>
           <Menu.Item>
@@ -61,7 +63,9 @@ function Navbar() {
                 size={16}
                 className="-mr-1 self-center text-gray-400 flex"
               />
-              <p className="px-2" onClick={handleMenuClick}>Sair</p>
+              <p className="px-2" onClick={handleMenuClick}>
+                Sair
+              </p>
             </Link>
           </Menu.Item>
         </div>
@@ -75,7 +79,8 @@ function Navbar() {
             <Link
               to="/login"
               className="flex px-4 py-2 text-sm bg-zinc-100  text-darkMossGreen hover:bg-lime-50
-													rounded-md transition duration-300 ease-in-out" onClick={handleMenuClick}
+													rounded-md transition duration-300 ease-in-out"
+              onClick={handleMenuClick}
             >
               <SignIn
                 size={16}
@@ -124,13 +129,22 @@ function Navbar() {
       </div>
 
       <div
-        className={`p-4 grid mb-12 gap-7 md:grid-flow-col font-bold text-[14px] md:pb-0 pb-1 min-[768px]:pt-6 min-[320px]:absolute md:static max-[767px]:bg-[#EDFCD9] max-[767px]:mt-9 mt-5 min-[320px]:items-center left-0 w-full md:w-auto transition-all duration-500 ease-in ${isOpen ? "top-12" : "top-[-490px]"
-          } z-50`}
+        className={`p-4 grid mb-12 gap-7 md:grid-flow-col font-bold text-[14px] md:pb-0 pb-1 min-[768px]:pt-6 min-[320px]:absolute md:static max-[767px]:bg-[#EDFCD9] max-[767px]:mt-9 mt-5 min-[320px]:items-center left-0 w-full md:w-auto transition-all duration-500 ease-in ${
+          isOpen ? "top-12" : "top-[-490px]"
+        } z-50`}
       >
-        <Link to="/home" className="hover:text-lime-900 uppercase" onClick={handleMenuClick}>
+        <Link
+          to="/home"
+          className="hover:text-lime-900 uppercase"
+          onClick={handleMenuClick}
+        >
           Home
         </Link>
-        <Link to="/sobreNos" className="hover:text-lime-900 uppercase" onClick={handleMenuClick}>
+        <Link
+          to="/sobreNos"
+          className="hover:text-lime-900 uppercase"
+          onClick={handleMenuClick}
+        >
           Sobre Nós
         </Link>
         <Menu as="div" className="relative inline-block">
@@ -161,7 +175,8 @@ function Navbar() {
                   <Link
                     to={`/produtos`}
                     className="block px-4 py-2 text-[12px]  bg-seasalt text-darkMossGreen bg-lime-50  hover:bg-lime-200
-                      rounded-md transition duration-300 ease-in-out" onClick={handleMenuClick}
+                      rounded-md transition duration-300 ease-in-out"
+                    onClick={handleMenuClick}
                   >
                     Todos os Produtos
                   </Link>
@@ -171,7 +186,8 @@ function Navbar() {
                     <Link
                       to={`/cadastroProduto`}
                       className="block px-4 py-2 text-[12px]  bg-seasalt text-darkMossGreen bg-lime-50  hover:bg-lime-200
-              rounded-md transition duration-300 ease-in-out" onClick={handleMenuClick}
+              rounded-md transition duration-300 ease-in-out"
+                      onClick={handleMenuClick}
                     >
                       Cadastrar Produto
                     </Link>
@@ -208,7 +224,8 @@ function Navbar() {
                 <Menu.Item>
                   <Link
                     to={`/categorias`}
-                    className="block px-4 py-2 text-[12px] bg-seasalt text-darkMossGreen hover:bg-lime-200 rounded-md transition duration-200 ease-in-out" onClick={handleMenuClick}
+                    className="block px-4 py-2 text-[12px] bg-seasalt text-darkMossGreen hover:bg-lime-200 rounded-md transition duration-200 ease-in-out"
+                    onClick={handleMenuClick}
                   >
                     Todas as Categorias
                   </Link>
@@ -217,7 +234,8 @@ function Navbar() {
                   <Menu.Item>
                     <Link
                       to={`/cadastroCategoria`}
-                      className="block px-4 py-2 text-[12px] bg-seasalt text-darkMossGreen hover:bg-lime-200 rounded-md transition duration-200 ease-in-out" onClick={handleMenuClick}
+                      className="block px-4 py-2 text-[12px] bg-seasalt text-darkMossGreen hover:bg-lime-200 rounded-md transition duration-200 ease-in-out"
+                      onClick={handleMenuClick}
                     >
                       Cadastrar Categoria
                     </Link>
@@ -228,23 +246,29 @@ function Navbar() {
           </Transition>
         </Menu>
 
-        <Link to="/contatos" className="hover:text-lime-900 uppercase" onClick={handleMenuClick}>
+        <Link
+          to="/contatos"
+          className="hover:text-lime-900 uppercase"
+          onClick={handleMenuClick}
+        >
           Contatos
         </Link>
 
         <div className="gap-3 justify-around flex items-center max-[767px]:pb-3 max-[767px]:mt-[-15px]">
           <div className="flex rounded-[12rem] items-center border border-emerald p-[6px] bg-lime-50">
             <Menu as="div" className="relative inline-block text-darkMossGreen">
-              <div className="flex group">
-              <Link to='/cart'><img
+              <Link to="/cart">
+                <div className="flex group">
+                  <img
                     src={Carrinho}
                     className="w-6 ml-2"
                     alt="User Icon"
                   ></img>
                   <p className="flex headerBtn ps-2 pe-2 items-center self-center">
                     Carrinho
-                  </p></Link>
-              </div>
+                  </p>
+                </div>
+              </Link>
             </Menu>
           </div>
         </div>
