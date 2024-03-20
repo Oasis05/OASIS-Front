@@ -17,7 +17,7 @@ function Home() {
               Conheça a loja de Oásis
             </p>
 
-            <div className="flex justify-around max-[767px]:mr-10 gap-4">
+            <div className="flex justify-around mr-10 gap-4">
               <div className="flex space-x-4">
                 <Link to="/produtos">
                   <button className="rounded bg-lime-800 bg-opacity-50 text-white min-[320px]:ml-10 py-2 px-4 shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-lime-700">

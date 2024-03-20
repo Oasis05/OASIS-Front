@@ -1,30 +1,35 @@
-# React + TypeScript + Vite
+# Projeto Integrador: Agricultura Sustentável e Fome Zero
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Visão Geral:
 
-Currently, two official plugins are available:
+Este é um projeto integrador desenvolvido como parte do curso de Java, focado na criação de um E-commerce voltado para a promoção da Agricultura Sustentável e o combate à Fome. O projeto abraça os Objetivos de Desenvolvimento Sustentável (ODS) da ONU, especificamente o ODS 2 - Fome Zero e o ODS 12 - Consumo e Produção Sustentáveis.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Objetivos:
 
-## Expanding the ESLint configuration
+1. **Promoção da Agricultura Sustentável:** Valorizar agricultores familiares, destacando e comercializando seus produtos de forma justa e sustentável.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. **Combate à Fome:** Implementar um modelo de doação, onde parte dos lucros é direcionada para a doação de alimentos a comunidades em situação de vulnerabilidade.
 
-- Configure the top-level `parserOptions` property like this:
+3. **Conscientização e Consumo Consciente:** Criar uma comunidade em torno do consumo consciente, onde cada compra não apenas beneficia o cliente, mas também tem um impacto direto na vida de famílias carentes.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Funcionalidades Principais:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Cadastro de produtos por agricultores familiares.
+- Categorização de produtos em "Hortaliças", "Frutas" e outros, promovendo a diversidade alimentar.
+- Transparência na cadeia de produção, rastreando produtos até o agricultor responsável.
+- Compromisso de doação: a cada compra, uma porcentagem é destinada à caridade.
+
+## Tecnologias Utilizadas:
+
+- **Linguagem:** Java
+- **Banco de Dados:** MySQL
+- **Framework Web:** Spring Boot
+
+## Equipe:
+
+- Anderson Carlos de Morais Silva
+- Fernanda Sasso
+- Flavia Ribeiro Paião
+- Guilherme Abreu Do Nascimento
+- Isabella de Paula Albuquerque
+- Lauane Gonçalves C. da Silva

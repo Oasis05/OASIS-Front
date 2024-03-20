@@ -99,7 +99,7 @@ function Navbar() {
       <Link to="/home">
         <img
           src={Logo}
-          className="w-[70px] max-[767px]:w-24 max-[767px]:my-2 max-[600px]:ml-[-40px]"
+          className="w-[70px] max-[800px]:w-24 max-[800px]:my-2 max-[600px]:ml-[-40px]"
           alt="Logo"
         />
       </Link>
@@ -111,7 +111,7 @@ function Navbar() {
           name="descricao"
           value={termoPesquisa}
           onChange={(e) => setTermoPesquisa(e.target.value)}
-          className="w-[20vw] max-[767px]:w-[25vw] h-[10px] border-none max-[767px]:mr-6 rounded-full p-3 self-center input-pesquisa bg-transparent text-black focus:outline-none"
+          className="w-[20vw] max-[800px]:w-[25vw] h-[10px] border-none max-[800px]:mr-6 rounded-full p-3 self-center input-pesquisa bg-transparent text-black focus:outline-none"
         />
         <button
           onClick={handlePesquisa}
@@ -129,7 +129,7 @@ function Navbar() {
       </div>
 
       <div
-        className={`p-4 grid mb-12 gap-7 md:grid-flow-col font-bold text-[14px] md:pb-0 pb-1 min-[768px]:pt-6 min-[320px]:absolute md:static max-[767px]:bg-[#EDFCD9] max-[767px]:mt-9 mt-5 min-[320px]:items-center left-0 w-full md:w-auto transition-all duration-500 ease-in ${
+        className={`p-4 grid mb-12 gap-7 md:grid-flow-col font-bold text-[14px] md:pb-0 pb-1 min-[768px]:pt-6 min-[320px]:absolute md:static max-[800px]:bg-[#EDFCD9] max-[800px]:mt-9 mt-5 min-[320px]:items-center left-0 w-full md:w-auto transition-all duration-500 ease-in ${
           isOpen ? "top-12" : "top-[-490px]"
         } z-50`}
       >
@@ -254,7 +254,7 @@ function Navbar() {
           Contatos
         </Link>
 
-        <div className="gap-3 justify-around flex items-center max-[767px]:pb-3 max-[767px]:mt-[-15px]">
+        <div className="gap-3 justify-around flex items-center max-[800px]:mt-[-15px]">
           <div className="flex rounded-[12rem] items-center border border-emerald p-[6px] bg-lime-50">
             <Menu as="div" className="relative inline-block text-darkMossGreen">
                 <div className="flex group">
@@ -275,7 +275,7 @@ function Navbar() {
         </div>
 
         <div className="gap-3 justify-around flex items-center">
-          <div className="flex rounded-[12rem] items-center border border-emerald p-[5px]  bg-lime-50">
+          <div className="flex rounded-[12rem] items-center border border-emerald p-[5px] bg-lime-50">
             <Menu as="div" className="relative inline-block text-darkMossGreen">
               <div className="flex group">
                 <Menu.Button className="transition duration-300 ease-in-out group-hover:text-sunglow inline-flex w-full">

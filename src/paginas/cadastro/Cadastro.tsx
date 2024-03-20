@@ -119,7 +119,7 @@ function Cadastro() {
   return (
     <>
       <div
-        className="flex h-screen w-full items-center justify-center bg-yellow-950 bg-cover bg-no-repeat"
+        className="flex h-screen w-full m-6 items-center justify-center bg-yellow-950 bg-cover bg-no-repeat"
         style={{ background: "white" }}
       >
         {" "}
@@ -196,8 +196,8 @@ function Cadastro() {
                   onChange={handleTipoUsuario}
                 >
                   <option value={"0"}>Entrar como</option>
-                  <option value={"1"}>Vendedor</option>
-                  <option value={"2"}>Usuário</option>
+                  <option value={"1"}>Administrador</option>
+                  <option value={"2"}>Cliente</option>
                 </select>
               </div>
 
