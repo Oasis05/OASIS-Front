@@ -56,7 +56,7 @@ function Navbar() {
             <Link
               to="/login"
               onClick={logout}
-              className="flex px-4 py-2 text-sm  bg-zinc-100 text-darkMossGreen hover:bg-lime-50
+              className="flex px-4 py-2 text-sm  bg-zinc-100 text-darkMossGreen hover:bg-lime-200
 													rounded-md transition duration-300 ease-in-out"
             >
               <SignOut
@@ -78,7 +78,7 @@ function Navbar() {
           <Menu.Item>
             <Link
               to="/login"
-              className="flex px-4 py-2 text-sm bg-zinc-100  text-darkMossGreen hover:bg-lime-50
+              className="flex px-4 py-2 text-sm bg-zinc-100  text-darkMossGreen hover:bg-lime-200
 													rounded-md transition duration-300 ease-in-out"
               onClick={handleMenuClick}
             >

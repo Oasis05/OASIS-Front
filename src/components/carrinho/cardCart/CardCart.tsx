@@ -21,7 +21,7 @@ function CardCart({ item }: CardProdutosProps) {
 
   return (
     <div className="flex justify-center">
-      <div className="bg-lime-50 rounded-lg overflow-hidden shadow-md transition-transform min-[767px]:w-80 w-96 transform hover:scale-105 relative min-w-sm">
+      <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform min-[767px]:w-80 w-96 transform hover:scale-105 relative min-w-sm">
         <div
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{
@@ -29,7 +29,7 @@ function CardCart({ item }: CardProdutosProps) {
             opacity: 0.2,
           }}
         ></div>
-        <div className="p-1 bg-lime-900"></div>
+        <div className="p-1 bg-lime-200"></div>
         <div className="p-6 relative z-10  flex flex-col justify-center items-center">
           <h2 className="text-lg font-bold text-gray-800 mb-3">{item.nome}</h2>
           <p className="text-sm text-gray-600 mb-3">
@@ -62,8 +62,8 @@ function CardCart({ item }: CardProdutosProps) {
           </div>
         </div>
         {showOptions && (
-          <ul className="text-sm text-gray-600 mb-3 absolute top-0 right-0 mt-8 bg-white border border-gray-200 rounded-lg p-2">
-            <select aria-label="Select quantity" className="py-2 px-1 border border-gray-200 mr-6 focus:outline-none dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white">
+          
+            <select aria-label="Select quantity" className="text-sm  mb-3 absolute top-0 right-0 mt-8 bg-white rounded-lg p-2 py-2 px-1 border border-gray-200 mr-6 focus:outline-none dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white">
                 <option>01</option>
                 <option>02</option>
                 <option>03</option>
@@ -74,7 +74,6 @@ function CardCart({ item }: CardProdutosProps) {
                 <option>08</option>
                 <option>09</option>
               </select>
-          </ul>
         )}
 
         {usuario.tipo === "1" ? (
