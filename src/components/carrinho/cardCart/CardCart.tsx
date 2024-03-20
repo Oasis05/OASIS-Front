@@ -21,7 +21,7 @@ function CardCart({ item }: CardProdutosProps) {
 
   return (
     <div className="flex justify-center">
-      <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform max-[767px]:w-80 w-96 transform hover:scale-105 relative max-w-sm">
+      <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform min-[767px]:w-80 w-96 transform hover:scale-105 relative min-w-sm">
         <div
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{
