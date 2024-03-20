@@ -232,10 +232,10 @@ function Navbar() {
           Contatos
         </Link>
 
-        <div className="gap-3 justify-around flex items-center max-[767px]:pb-3 max-[767px]:mt-[-15px]">
+        <div className="gap-3 justify-around flex items-center whitespace-nowrap max-[767px]:pb-3 max-[767px]:mt-[-15px]">
           <div className="flex rounded-[12rem] items-center border border-emerald p-[6px] bg-lime-50">
             <Menu as="div" className="relative inline-block text-darkMossGreen">
-              <div className="flex group whitespace-nowrap">
+              <div className="flex group">
               <Link to='/cart'><img
                     src={Carrinho}
                     className="w-6 ml-2"
