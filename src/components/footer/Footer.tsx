@@ -15,7 +15,7 @@ function Footer() {
       <div className="bg-gradient-to-br from-teal-50 to-lime-100 text-lime-950">
         <div className="container flex justify-between items-center py-4 px-8">
           <Link to="/home" className="text-lime-950">
-            <img src={Logo} className="w-14 max-[767px]:w-14 max-[767px]:ml-1 ml-40" alt="Logo" />
+            <img src={Logo} className="w-14 max-[800px]:w-14 max-[800px]:ml-1 ml-40" alt="Logo" />
           </Link>
           <div className="text-lg text-lime-950 text-center">
             Acesse nossas redes sociais
