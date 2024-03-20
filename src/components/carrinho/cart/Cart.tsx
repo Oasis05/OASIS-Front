@@ -12,13 +12,16 @@ function Cart() {
     
     return (
         <div className="
-                bg-gray-200 
+                bg-white 
                 flex 
                 flex-col
                 justify-center
-                ">
+                mt-4
+                mb-4
+                w-full md:w-1/3 p-4"
+                >
 
-            <h1 className="text-4xl text-center my-4">
+            <h1 className="text-xl font-bold mt-8 my-4 uppercase text-yellow-950 max-[767px]:flex-wrap max-[767px]:flex max-[767px]:text-center">
                 Carrinho de Compras
             </h1>
             <h2 className="text-2xl text-center my-4">
@@ -33,7 +36,7 @@ function Cart() {
                 }
             </div>
 
-            <button className="rounded text-slate-100 bg-slate-400 
+            <button className="rounded text-lime-800 bg-lime-600 
           hover:bg-slate-800 w-1/4 py-2 mx-auto flex justify-center"
                 type="submit" 
                 disabled={items.length === 0 ? true : false}
