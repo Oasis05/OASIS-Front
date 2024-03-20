@@ -63,8 +63,7 @@ function CardCart({ item }: CardProdutosProps) {
         </div>
         
         <div>
-      <button onClick={toggleOptions}>Qauntidade</button>
-
+            
         <select
           aria-label="Select quantity"
           className="text-sm mb-3 absolute top-0 right-0 mt-8 bg-white rounded-lg p-2 py-2 px-1 border border-gray-200 mr-6 focus:outline-none dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
