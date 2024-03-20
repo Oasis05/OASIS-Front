@@ -1,7 +1,8 @@
 import Lauane from "../../assets/Lauane.jpg";
 import Guilherme from "../../assets/Guilherme.jpg";
-import Flavia from "../../assets/Flavia-semFundo.png"
+import Flavia from "../../assets/Flavia.png"
 import Anderson from "../../assets/Anderson.png"
+import Isabella from "../../assets/Isabella.jpg"
 import Perfil from "../../assets/Perfil.jpg";
 import GitHub from "../../assets/icons/github.svg";
 import Linkedin from "../../assets/icons/linkedIn.svg";
@@ -234,7 +235,7 @@ function Contatos() {
             Isabella Albuquerque
           </h5>
           <img
-            src={Perfil}
+            src={Isabella}
             alt="Foto-Perfil"
             className="max-w-xs md:max-w-md rounded-full"
             style={{ width: "40%" }}
