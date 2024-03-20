@@ -240,10 +240,10 @@ function Navbar() {
                     src={Carrinho}
                     className="w-6 ml-2"
                     alt="User Icon"
-                  ></img></Link>
+                  ></img>
                   <p className="flex headerBtn ps-2 pe-2 items-center self-center">
                     Carrinho
-                  </p>
+                  </p></Link>
               </div>
             </Menu>
           </div>
@@ -254,7 +254,7 @@ function Navbar() {
             <Menu as="div" className="relative inline-block text-darkMossGreen">
               <div className="flex group">
                 <Menu.Button className="transition duration-300 ease-in-out group-hover:text-sunglow inline-flex w-full">
-                  <img src={User} className="w-7" alt="User Icon"></img>
+                  <img src={User} className="w-6 ml-2" alt="User Icon"></img>
                   <p className="flex headerBtn ps-2 pe-2 items-center self-center">
                     Perfil
                   </p>
