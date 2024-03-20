@@ -28,7 +28,6 @@ function CardCategorias({ categoria }: CardCategoriaProps) {
       <div className="p-1 bg-lime-900"></div>
       <div className="p-8 relative z-10">
         <h2 className="text-3xl font-bold text-gray-800 mb-4 uppercase">{categoria.tipo}</h2>
-        <p className="text-gray-600 mb-6">Descrição da categoria aqui</p>
         {showOptions && (
           <ul className="text-sm text-gray-600 mb-6 absolute top-0 right-0 mt-10 bg-white border border-gray-200 rounded-lg p-2">
             <li>
