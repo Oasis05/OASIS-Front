@@ -74,7 +74,7 @@ function Navbar() {
           <Menu.Item>
             <Link
               to="/login"
-              className="flex px-4 py-2 text-sm bg-zinc-100  text-darkMossGreen hover:bg-green-100
+              className="flex px-4 py-2 text-sm bg-zinc-100  text-darkMossGreen hover:bg-lime-50
 													rounded-md transition duration-300 ease-in-out" onClick={handleMenuClick}
             >
               <SignIn
@@ -106,7 +106,7 @@ function Navbar() {
           name="descricao"
           value={termoPesquisa}
           onChange={(e) => setTermoPesquisa(e.target.value)}
-          className="w-[20vw] max-[767px]:w-[25vw] h-[10px] border-none max-[767px]:mr-6 rounded-full p-3 self-center input-pesquisa bg-transparent text-black"
+          className="w-[20vw] max-[767px]:w-[25vw] h-[10px] border-none max-[767px]:mr-6 rounded-full p-3 self-center input-pesquisa bg-transparent text-black focus:outline-none"
         />
         <button
           onClick={handlePesquisa}
@@ -236,35 +236,15 @@ function Navbar() {
           <div className="flex rounded-[12rem] items-center border border-emerald p-[6px] bg-lime-50">
             <Menu as="div" className="relative inline-block text-darkMossGreen">
               <div className="flex group">
-                <Menu.Button className="transition duration-300 ease-in-out group-hover:text-sunglow inline-flex w-full">
-                  <img
+              <Link to='/cart'><img
                     src={Carrinho}
                     className="w-6 ml-2"
                     alt="User Icon"
-                  ></img>
+                  ></img></Link>
                   <p className="flex headerBtn ps-2 pe-2 items-center self-center">
                     Carrinho
                   </p>
-                  <CaretDown
-                    size={10}
-                    className="me-2 self-center text-darkMossGreen text-[12px] transition duration-300 ease-in-out group-hover:text-sunglow"
-                    weight="bold"
-                    aria-hidden="true"
-                  />
-                </Menu.Button>
               </div>
-
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                {userDropDown}
-              </Transition>
             </Menu>
           </div>
         </div>

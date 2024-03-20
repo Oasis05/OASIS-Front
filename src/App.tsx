@@ -20,10 +20,14 @@ import DeletarProduto from "./components/produtos/deletarProduto/DeletarProduto"
 import { ToastContainer } from "react-toastify";
 import Perfil from "./paginas/perfil/Perfil";
 import Contatos from "./paginas/contatos/contatos";
+import { CartProvider } from './contexts/CartContext';
+import Cart from './components/carrinho/cart/Cart';
 
 function App() {
   return (
     <AuthProvider>
+          <CartProvider>
+
       <ToastContainer />
       <BrowserRouter>
         <div>
@@ -60,11 +64,15 @@ function App() {
               <Route path="/contatos" element={<Contatos />} />
 
               <Route path="/perfil" element={<Perfil />} />
+
+              <Route path="/cart" element={<Cart />} />
             </Routes>
           </div>
           <Footer />
         </div>
       </BrowserRouter>
+      </CartProvider>
+
     </AuthProvider>
   );
 }

@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { CartContext } from "../../../contexts/CartContext";
 import { Link } from "react-router-dom";
 import Produto from '../../../models/Produto';
 import { AuthContext } from "../../../contexts/AuthContext";
@@ -8,6 +9,8 @@ interface CardProdutoProps {
 }
 
 function CardProduto({ prod }: CardProdutoProps) {
+  const { Selecionar } = useContext(CartContext);
+
   const [showOptions, setShowOptions] = useState(false);
 
   const toggleOptions = () => {
@@ -43,10 +46,13 @@ function CardProduto({ prod }: CardProdutoProps) {
             </li>
           </ul>
           <div className="p-3">
-            <button
-              className="w-full bg-lime-800 text-white rounded-full px-3 py-2 hover:bg-lime-600 focus:outline-none focus:shadow-outline-purple"
+          <button
+              className="w-full bg-lime-800 text-white rounded-full px-3 py-2
+                           hover:bg-lime-600 flex items-center focus:outline-none focus:shadow-outline-lime
+                           justify-center py-2"
+              onClick={() => Selecionar(prod)}
             >
-              Selecionar
+              Comprar
             </button>
           </div>
         </div>
