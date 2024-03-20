@@ -181,7 +181,7 @@ function Contatos() {
           />
           <section className="mt-8">
             <p>
-              <span className="font-bold">Idade: 22 anos</span> X anos
+              <span className="font-bold">Idade: 22 anos</span>
             </p>
             <p>
               <span className="font-bold">Formação: Técnico em Administração, Desenvolvimento Web 
