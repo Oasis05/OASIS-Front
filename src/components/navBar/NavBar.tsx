@@ -232,7 +232,7 @@ function Navbar() {
           Contatos
         </Link>
 
-        <div className="gap-3 justify-around flex items-center whitespace-nowrap max-[767px]:pb-3 max-[767px]:mt-[-15px]">
+        <div className="gap-3 justify-around flex items-center max-[767px]:pb-3 max-[767px]:mt-[-15px]">
           <div className="flex rounded-[12rem] items-center border border-emerald p-[6px] bg-lime-50">
             <Menu as="div" className="relative inline-block text-darkMossGreen">
               <div className="flex group">
@@ -254,7 +254,7 @@ function Navbar() {
             <Menu as="div" className="relative inline-block text-darkMossGreen">
               <div className="flex group">
                 <Menu.Button className="transition duration-300 ease-in-out group-hover:text-sunglow inline-flex w-full">
-                  <img src={User} className="w-6 ml-2" alt="User Icon"></img>
+                  <img src={User} className="w-5 ml-2" alt="User Icon"></img>
                   <p className="flex headerBtn ps-2 pe-2 items-center self-center">
                     Perfil
                   </p>

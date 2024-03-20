@@ -36,11 +36,11 @@ function Cart() {
             </div>
 
             <button className="rounded text-white bg-lime-800 
-          hover:bg-lime-600 w-1/4 py-2 mx-auto m-4 flex justify-center whitespace-nowrap"
+          hover:bg-lime-600 w-1/4 py-2 mx-auto flex justify-center"
                 type="submit" 
                 disabled={items.length === 0 ? true : false}
                 onClick={limparCart}>
-                 Finalizar Compra 
+                Finalizar Compra
             </button>
         </div>
     )

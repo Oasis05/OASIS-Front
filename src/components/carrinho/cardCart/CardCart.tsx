@@ -21,7 +21,7 @@ function CardCart({ item }: CardProdutosProps) {
 
   return (
     <div className="flex justify-center">
-      <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform min-[767px]:w-80 w-96 transform hover:scale-105 relative min-w-sm">
+      <div className="bg-lime-50 rounded-lg overflow-hidden shadow-md transition-transform min-[767px]:w-80 w-96 transform hover:scale-105 relative min-w-sm">
         <div
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{
@@ -63,10 +63,17 @@ function CardCart({ item }: CardProdutosProps) {
         </div>
         {showOptions && (
           <ul className="text-sm text-gray-600 mb-3 absolute top-0 right-0 mt-8 bg-white border border-gray-200 rounded-lg p-2">
-            <li>01</li>
-            <li>02</li>
-            <li>03</li>
-            <li>04</li>
+            <select aria-label="Select quantity" className="py-2 px-1 border border-gray-200 mr-6 focus:outline-none dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white">
+                <option>01</option>
+                <option>02</option>
+                <option>03</option>
+                <option>04</option>
+                <option>05</option>
+                <option>06</option>
+                <option>07</option>
+                <option>08</option>
+                <option>09</option>
+              </select>
           </ul>
         )}
 
