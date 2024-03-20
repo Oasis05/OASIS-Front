@@ -11,17 +11,15 @@ function CardCart({ item }: CardProdutosProps) {
     const { removerProduto } = useContext(CartContext);
 
     return (
-        <div className='flex flex-col rounded-lg overflow-hidden justify-between bg-white'>
-            <div className='py-4'>
-                <div className='flex justify-center'>
-                    <div className='bg-white rounded-lg overflow-hidden shadow-md transition-transform max-[767px]:w-80 w-96 transform hover:scale-105 relative max-w-sm'>
-                        <div
-                            className='absolute inset-0 bg-cover bg-center z-0'
-                            style={{
-                                backgroundImage: `url('https://i.imgur.com/qisVhXC.jpg')`,
-                                opacity: 0.2,
-                            }}
-                        ></div>
+        <div className='flex justify-center'>
+      <div className='bg-white rounded-lg overflow-hidden shadow-md transition-transform max-[767px]:w-80 w-96 transform hover:scale-105 relative max-w-sm'>
+        <div
+          className='absolute inset-0 bg-cover bg-center z-0'
+          style={{
+            backgroundImage: `url('https://i.imgur.com/qisVhXC.jpg')`,
+            opacity: 0.2,
+          }}
+        ></div>
                         <div className='p-1 bg-lime-900'></div>
                         <div className='p-6 relative z-10  flex flex-col justify-center items-center'>
                             <img src={item.foto} alt={item.nome} className="w-32 h-auto mb-3" />
@@ -39,9 +37,6 @@ function CardCart({ item }: CardProdutosProps) {
                                 currency: 'BRL'
                             }).format(item.preco)}</p>
                             <ul className='text-sm text-gray-600 mb-3'>
-                                <li className='mb-1 flex items-center'>
-                                    Quantidade: {item.quantidade}
-                                </li>
                                 <li className='flex items-center'>
                                     Validade: {item.dataValidade && new Intl.DateTimeFormat(undefined, {
                                         dateStyle: 'long',
@@ -51,8 +46,9 @@ function CardCart({ item }: CardProdutosProps) {
                             <div className="p-3">
                                 <div className="flex flex-wrap">
                                     <button
-                                        className='w-full text-slate-100 bg-red-500 hover:bg-red-700 
-                                        flex items-center justify-center py-2'
+                                        className='w-full bg-red-800 text-white rounded-full px-3 py-2
+                                        hover:bg-red-600 flex items-center focus:outline-none focus:shadow-outline-lime
+                                        justify-center py-2'
                                         onClick={() => removerProduto && removerProduto(item.id)}>
                                         Remover
                                     </button>
