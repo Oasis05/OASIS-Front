@@ -233,7 +233,7 @@ function Navbar() {
         </Link>
 
         <div className="gap-3 justify-around flex items-center max-[767px]:pb-3 max-[767px]:mt-[-15px]">
-          <div className="flex rounded-[12rem] items-center border border-emerald p-[6px] bg-lime-50">
+          <div className="flex rounded-[12rem] items-center border border-emerald p-[6px] bg-lime-50 whitespace-nowrap">
             <Menu as="div" className="relative inline-block text-darkMossGreen">
               <div className="flex group">
               <Link to='/cart'><img
